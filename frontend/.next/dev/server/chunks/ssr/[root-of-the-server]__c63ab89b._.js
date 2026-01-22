@@ -110,6 +110,7 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$a
 "[project]/src/app/(home)/Home.jsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// Home.js
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
@@ -126,25 +127,74 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f28$home$292f$In
 ;
 ;
 ;
+// Fallback data in case API fails
+const fallbackHeroData = {
+    slogan: "Clean energy, unstoppable flow.",
+    description: "Dudhkoshi Hydropower Nepal Pvt. Ltd. is a leading hydropower development company committed to delivering clean, reliable, and sustainable energy for Nepal's growing power needs. Established with a vision to harness Nepal's immense hydropower potential, the company specializes in planning, designing, developing, and managing high-quality hydropower projects that contribute to national energy security and economic growth.",
+    btn1Text: "About Us",
+    btn1Link: "#about-us",
+    btn2Text: "Gallery",
+    btn2Link: "#gallery"
+};
+// Function to fetch hero section data
+const fetchHeroData = async ()=>{
+    try {
+        const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
+        const response = await fetch(`${BASE_API}/contents/herosection`, {
+            cache: 'no-store'
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (data.success && data.data && data.data.length > 0) {
+            const apiData = data.data[0];
+            return {
+                slogan: apiData.slogan || fallbackHeroData.slogan,
+                description: apiData.description || fallbackHeroData.description,
+                btn1Text: apiData.btn1Text || fallbackHeroData.btn1Text,
+                btn1Link: apiData.btn1Link || fallbackHeroData.btn1Link,
+                btn2Text: apiData.btn2Text || fallbackHeroData.btn2Text,
+                btn2Link: apiData.btn2Link || fallbackHeroData.btn2Link
+            };
+        }
+        return fallbackHeroData;
+    } catch (error) {
+        console.error('Failed to fetch hero section data:', error);
+        return fallbackHeroData;
+    }
+};
 // Main Hero Section Component
 const Home1 = async ()=>{
+    // Fetch hero section data from API during SSR
+    const heroData = await fetchHeroData();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$noop$2d$head$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
-                    children: "Home"
-                }, void 0, false, {
-                    fileName: "[project]/src/app/(home)/Home.jsx",
-                    lineNumber: 21,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("title", {
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/(home)/Home.jsx",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("meta", {
+                        name: "description",
+                        content: heroData.description.substring(0, 160)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/(home)/Home.jsx",
+                        lineNumber: 62,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/app/(home)/Home.jsx",
-                lineNumber: 20,
+                lineNumber: 60,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "bg-white  pt-[120px] md:pt-20 lg:pt-24 max-w-[1400px] mx-auto px-[20px] lg:px-0",
+                className: "bg-white pt-[120px] md:pt-20 lg:pt-24 max-w-[1400px] mx-auto px-[20px] lg:px-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "container mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8",
                     children: [
@@ -154,74 +204,74 @@ const Home1 = async ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                     "data-aos": "fade-up",
                                     className: "text-3xl sm:text-4xl lg:text-4xl font-extrabold text-[var(--primary1)] leading-tight",
-                                    children: "Clean energy, unstoppable flow."
+                                    children: heroData.slogan
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(home)/Home.jsx",
-                                    lineNumber: 29,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     "data-aos": "fade-up",
                                     className: "mt-8 text-lg sm:text-xl text-gray-600 w-full max-w-full",
-                                    children: "Dudhkoshi Hydropower Nepal Pvt. Ltd. is a leading hydropower development company committed to delivering clean, reliable, and sustainable energy for Nepal’s growing power needs. Established with a vision to harness Nepal’s immense hydropower potential, the company specializes in planning, designing, developing, and managing high-quality hydropower projects that contribute to national energy security and economic growth."
+                                    children: heroData.description
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(home)/Home.jsx",
-                                    lineNumber: 33,
+                                    lineNumber: 75,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mt-10 md:flex-row md:gap-1 gap-[10px] flex-col flex space-x-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Buttons$2f$RoundedBgBtn$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                            label: "About Us",
-                                            link: "#about-us"
+                                            label: heroData.btn1Text,
+                                            link: heroData.btn1Link
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(home)/Home.jsx",
-                                            lineNumber: 39,
-                                            columnNumber: 1
+                                            lineNumber: 83,
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Buttons$2f$RoundedNotBGBtn$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                            label: "Gallary",
-                                            link: "#gallery"
+                                            label: heroData.btn2Text,
+                                            link: heroData.btn2Link
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(home)/Home.jsx",
-                                            lineNumber: 43,
-                                            columnNumber: 11
+                                            lineNumber: 87,
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(home)/Home.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(home)/Home.jsx",
-                            lineNumber: 28,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             "data-aos": "fade-right",
-                            className: "lg:h-full flex items-center overflow-hidden justify-center ",
+                            className: "lg:h-full flex items-center overflow-hidden justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f28$home$292f$InfiniteScrollingImage$2e$jsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/src/app/(home)/Home.jsx",
-                                lineNumber: 53,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/app/(home)/Home.jsx",
-                            lineNumber: 50,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/(home)/Home.jsx",
-                    lineNumber: 26,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/(home)/Home.jsx",
-                lineNumber: 24,
+                lineNumber: 65,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -311,73 +361,155 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$28$
 ;
 ;
 ;
+// Fallback data in case API fails
+const fallbackData = {
+    heading: "About Us",
+    longPara: "Dudhkoshi Hydropower Nepal Pvt. Ltd., established in 2070 B.S. and headquartered in Anamnagar, Kathmandu, is a dedicated hydropower development company committed to advancing Nepal's clean and sustainable energy future. The company is developing the Dudhkoshi-2 (Jaleshwor) Hydropower Project, a 95.7 MW optimized Peaking Run-of-River (PROR) project located on the Dudhkoshi River in Thulung Dudhkoshi, Solukhumbu District of Koshi Province. Backed by an experienced leadership team and strong institutional partners, the project is strategically designed on solid bedrock with robust geological conditions and reliable access, and is positioned to make a significant contribution to national power supply while supporting long-term economic and energy security in Nepal.",
+    firstCardHeading: "Foundation",
+    firstCardPara: "Our company stands on a strong foundation of transparency, accountability, and ethical hydropower development, ensuring every project is planned and executed with integrity. Backed by experienced engineers, consultants, and industry experts, our foundation is shaped by precision, innovation, and proven hydropower expertise. We are grounded in the belief that hydropower should benefit both people and the planet driving clean energy, empowering communities, and supporting Nepal's sustainable future.",
+    secCardHeading: "Where we Operate",
+    secCardPara: "Dudhkoshi Hydropower Nepal Pvt. Ltd. operates in one of Nepal's most promising hydropower regions — Solukhumbu District, located in Koshi Province. Our primary operational focus is the development of the Dudhkoshi-2 (Jaleswar) Hydroelectric Project, a 95.7 MW run-of-river project strategically positioned along the Dudhkoshi River.",
+    thirdCardHeading: "Capacity",
+    thirdCardHeading2: "97.5MW",
+    thirdCardPara: "The Dudhkoshi-2 (Jaleswar) Hydroelectric Project is designed as a 95.7 MW peaking run-of-river (PRoR) hydropower project optimized to meet Nepal's growing demand for reliable and sustainable energy. The project uses a design discharge of 83.5 m³/s and a gross head of 144.5 meters, enabling high-efficiency power generation even during dry seasons."
+};
+// Function to fetch about us data
+const fetchAboutUsData = async ()=>{
+    try {
+        const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
+        const response = await fetch(`${BASE_API}/contents/aboutus`, {
+            cache: 'no-store'
+        });
+        if (!response.ok) {
+            return fallbackData;
+        }
+        const data = await response.json();
+        if (data.success && data.data) {
+            const apiData = data.data;
+            return {
+                heading: apiData.heading || fallbackData.heading,
+                longPara: apiData.longPara || fallbackData.longPara,
+                firstCardHeading: apiData.firstCardHeading || fallbackData.firstCardHeading,
+                firstCardPara: apiData.firstCardPara || fallbackData.firstCardPara,
+                secCardHeading: apiData.secCardHeading || fallbackData.secCardHeading,
+                secCardPara: apiData.secCardPara || fallbackData.secCardPara,
+                thirdCardHeading: apiData.thirdCardHeading || fallbackData.thirdCardHeading,
+                thirdCardHeading2: apiData.thirdCardHeading2 || fallbackData.thirdCardHeading2,
+                thirdCardPara: apiData.thirdCardPara || fallbackData.thirdCardPara
+            };
+        }
+        return fallbackData;
+    } catch (error) {
+        console.error('Failed to fetch about us data:', error);
+        return fallbackData;
+    }
+};
+// Function to fetch about us images
+const fetchAboutUsImages = async ()=>{
+    try {
+        const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
+        const BASE_CONTENT_URL = process.env.BASE_CONTENT_URL || 'http://localhost:4000';
+        const response = await fetch(`${BASE_API}/contents/aboutusimg`, {
+            cache: 'no-store'
+        });
+        if (!response.ok) {
+            return {
+                fullImage: null,
+                firstCardImage: null
+            };
+        }
+        const data = await response.json();
+        if (data.success && data.data && data.data.length > 0) {
+            const apiImages = data.data[0];
+            return {
+                fullImage: apiImages.fullImage ? `${BASE_CONTENT_URL}uploads/aboutusimg/${apiImages.fullImage}` : null,
+                firstCardImage: apiImages.firstCardImage ? `${BASE_CONTENT_URL}uploads/aboutusimg/${apiImages.firstCardImage}` : null
+            };
+        }
+        return {
+            fullImage: null,
+            firstCardImage: null
+        };
+    } catch (error) {
+        console.error('Failed to fetch about us images:', error);
+        return {
+            fullImage: null,
+            firstCardImage: null
+        };
+    }
+};
 const Card = ({ children, className })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: ` p-6 rounded-xl shadow-lg transition duration-300 ease-in-out hover:scale-[1.01] ${className}`,
+        className: `p-6 rounded-xl shadow-lg transition duration-300 ease-in-out hover:scale-[1.01] ${className}`,
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-        lineNumber: 12,
+        lineNumber: 93,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 const ClientCarousel = async ()=>{
+    // Fetch data on the server side
+    const aboutData = await fetchAboutUsData();
+    const aboutImages = await fetchAboutUsImages();
+    // Determine which image to use for each card
+    const firstCardImageSrc = aboutImages.firstCardImage || __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$28$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$28$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src;
+    const mapImageSrc = aboutImages.fullImage || __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$map$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$map$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: " max-w-[1440px] pt-4  mx-auto bg-white",
+        className: "max-w-[1440px] pt-4 mx-auto bg-white",
         id: "about-us",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative flex items-center justify-centeroverflow-hidden bg-white font-[Inter]",
+                className: "relative flex items-center justify-center overflow-hidden bg-white font-[Inter]",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative z-10  mx-auto px-4 sm:px-6 lg:px-8 text-center",
+                    className: "relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             "data-aos": "zoom-out-up",
                             className: "flex justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "px-6 py-2 bg-white text-gray-900 font-medium text-xl rounded-full shadow-lg transition duration-200 hover:shadow-xl hover:text-gray-800  border border-gray-200",
-                                children: "About Us"
+                                className: "px-6 py-2 bg-white text-gray-900 font-medium text-xl rounded-full shadow-lg transition duration-200 hover:shadow-xl hover:text-gray-800 border border-gray-200",
+                                children: aboutData.heading
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                lineNumber: 35,
-                                columnNumber: 21
+                                lineNumber: 114,
+                                columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 34,
-                            columnNumber: 17
+                            lineNumber: 113,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             "data-aos": "zoom-out-up",
                             className: "text-l pb-8 sm:text-xl text-gray-700 text-start leading-relaxed max-w-[100%] mx-auto mt-4 border-blue-600 pt-4",
                             children: [
-                                "Dudhkoshi Hydropower Nepal Pvt. Ltd., established in 2070 B.S. and headquartered in Anamnagar, Kathmandu, is a dedicated hydropower development company committed to advancing Nepal’s clean and sustainable energy future. The company is developing the Dudhkoshi-2 (Jaleshwor) Hydropower Project, a ",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                aboutData.longPara,
+                                aboutData.longPara.includes("95.7 MW") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-semibold",
-                                    children: "95.7 MW"
+                                    children: " 95.7 MW"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 43,
-                                    columnNumber: 307
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                " optimized Peaking Run-of-River (PROR) project located on the Dudhkoshi River in Thulung Dudhkoshi, Solukhumbu District of Koshi Province. Backed by an experienced leadership team and strong institutional partners, the project is strategically designed on solid bedrock with robust geological conditions and reliable access, and is positioned to make a significant contribution to national power supply while supporting long-term economic and energy security in Nepal."
+                                    lineNumber: 125,
+                                    columnNumber: 15
+                                }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 42,
-                            columnNumber: 17
+                            lineNumber: 119,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                    lineNumber: 31,
-                    columnNumber: 13
+                    lineNumber: 112,
+                    columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                lineNumber: 27,
-                columnNumber: 9
+                lineNumber: 111,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid gap-6 lg:grid-cols-3  lg:h-[350px]",
+                className: "grid gap-6 lg:grid-cols-3 lg:h-[350px] min-h-[60vh]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "lg:col-span-1 lg:row-span-1 overflow-hidden rounded-xl shadow-lg",
@@ -385,32 +517,32 @@ const ClientCarousel = async ()=>{
                             className: "relative w-full h-full",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 "data-aos": "zoom-out-up",
-                                className: "flex h-full ",
+                                className: "flex h-full",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     width: 300,
                                     height: 300,
                                     unoptimized: true,
-                                    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$28$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$28$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+                                    src: firstCardImageSrc,
                                     alt: "Side view of the hydropower dam structure",
                                     className: "w-full h-full object-cover transition duration-300 ease-in-out hover:scale-[1.03]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 72,
-                                    columnNumber: 17
+                                    lineNumber: 136,
+                                    columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                lineNumber: 71,
+                                lineNumber: 135,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 70,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                        lineNumber: 69,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Card, {
@@ -419,103 +551,103 @@ const ClientCarousel = async ()=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                 "data-aos": "zoom-out-up",
                                 className: "text-l font-semibold mb-4 text-gray-300 opacity-75",
-                                children: "Foundation"
+                                children: aboutData.firstCardHeading
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                lineNumber: 86,
+                                lineNumber: 150,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 "data-aos": "zoom-out-up",
-                                className: "leading-relaxed text-white ",
-                                children: "Our company stands on a strong foundation of transparency, accountability, and ethical hydropower development, ensuring every project is planned and executed with integrity. Backed by experienced engineers, consultants, and industry experts, our foundation is shaped by precision, innovation, and proven hydropower expertise.We are grounded in the belief that hydropower should benefit both people and the planet driving clean energy, empowering communities, and supporting Nepal’s sustainable future."
+                                className: "leading-relaxed text-white",
+                                children: aboutData.firstCardPara
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                lineNumber: 87,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                        lineNumber: 85,
+                        lineNumber: 149,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Card, {
                         "data-aos": "zoom-out-up",
                         className: "bg-[var(--primary1)] text-white lg:col-span-1 lg:row-span-1 h-full relative overflow-hidden flex flex-col justify-between",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex md:flex-row flex-col  justify-between",
+                            className: "flex md:flex-row flex-col justify-between",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     "data-aos": "zoom-out-up",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                             className: "text-l font-semibold opacity-75",
-                                            children: "Capacity"
+                                            children: aboutData.thirdCardHeading
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                            lineNumber: 98,
-                                            columnNumber: 12
+                                            lineNumber: 165,
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center space-x-4 mt-4",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "relative text-xl font-extrabold",
-                                                children: "97.5MW"
+                                                children: aboutData.thirdCardHeading2
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                                lineNumber: 100,
-                                                columnNumber: 13
+                                                lineNumber: 169,
+                                                columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                            lineNumber: 99,
-                                            columnNumber: 11
+                                            lineNumber: 168,
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "mt-4 overflow-auto my-scroll text-l leading-relaxed max-w-[100%] lg:max-w-xs",
-                                            children: "The Dudhkoshi-2 (Jaleswar) Hydroelectric Project is designed as a 95.7 MW peaking run-of-river (PRoR) hydropower project optimized to meet Nepal’s growing demand for reliable and sustainable energy. The project uses a design discharge of 83.5 m³/s and a gross head of 144.5 meters, enabling high-efficiency power generation even during dry seasons."
+                                            children: aboutData.thirdCardPara
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                            lineNumber: 103,
-                                            columnNumber: 11
+                                            lineNumber: 173,
+                                            columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 97,
-                                    columnNumber: 5
+                                    lineNumber: 164,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                     src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$electric$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$electric$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
                                     width: 200,
                                     className: "w-[20%]",
                                     height: 200,
-                                    alt: "map"
+                                    alt: "electricity icon"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 108,
-                                    columnNumber: 4
+                                    lineNumber: 177,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 96,
-                            columnNumber: 4
+                            lineNumber: 163,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                        lineNumber: 95,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                lineNumber: 52,
+                lineNumber: 131,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Card, {
-                className: "bg-[var(--primary2)] mt-8 mb-4  text-white lg:col-span-2 lg:row-span-1 h-full relative overflow-hidden",
+                className: "bg-[var(--primary2)] mt-8 mb-4 text-white lg:col-span-2 lg:row-span-1 h-full relative overflow-hidden",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex md:flex-row flex-col items-center justify-between",
                     children: [
@@ -524,11 +656,11 @@ const ClientCarousel = async ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     className: "text-xl font-bold mb-4 opacity-75 text-gray-100",
-                                    children: "Where we Operate"
+                                    children: aboutData.secCardHeading
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 116,
-                                    columnNumber: 12
+                                    lineNumber: 192,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none",
@@ -536,72 +668,64 @@ const ClientCarousel = async ()=>{
                                         className: "absolute inset-0 bg-repeat [background-image:radial-gradient(currentColor_1px,_transparent_1px)] [background-size:20px_20px]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                        lineNumber: 119,
-                                        columnNumber: 13
+                                        lineNumber: 196,
+                                        columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 117,
-                                    columnNumber: 11
+                                    lineNumber: 195,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative z-10",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            "data-aos": "zoom-out-up",
-                                            className: "text-lg leading-relaxed max-w-2x text-gray-100 ",
-                                            children: "Dudhkoshi Hydropower Nepal Pvt. Ltd. operates in one of Nepal’s most promising hydropower regions — Solukhumbu District, located in Koshi Province. Our primary operational focus is the development of the Dudhkoshi-2 (Jaleswar) Hydroelectric Project, a 95.7 MW run-of-river project strategically positioned along the Dudhkoshi River."
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                            lineNumber: 122,
-                                            columnNumber: 13
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute right-[10%] top-[40%] bg-white w-2 h-2 rounded-full border-2 border-opacity-70 border-white shadow-xl"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                            lineNumber: 127,
-                                            columnNumber: 13
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        "data-aos": "zoom-out-up",
+                                        className: "text-lg leading-relaxed max-w-2x text-gray-100",
+                                        children: aboutData.secCardPara
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
+                                        lineNumber: 199,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                                    lineNumber: 121,
-                                    columnNumber: 11
+                                    lineNumber: 198,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 115,
-                            columnNumber: 6
+                            lineNumber: 191,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                             "data-aos": "zoom-out-up",
-                            src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$map$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$map$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$rsc$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src,
-                            width: 200,
-                            className: "w-[100%]",
+                            src: mapImageSrc,
+                            width: 300,
                             height: 200,
-                            alt: "map"
+                            className: "w-full md:w-auto max-w-[300px]",
+                            alt: "map",
+                            unoptimized: true
                         }, void 0, false, {
                             fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                            lineNumber: 130,
+                            lineNumber: 204,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                    lineNumber: 114,
-                    columnNumber: 11
+                    lineNumber: 190,
+                    columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-                lineNumber: 113,
-                columnNumber: 23
+                lineNumber: 189,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Misc/ClientCarousel.jsx",
-        lineNumber: 25,
+        lineNumber: 110,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1614,18 +1738,13 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$c
 // This file is generated by next-core EcmascriptClientReferenceModule.
 __turbopack_context__.s([
     "default",
-    ()=>__TURBOPACK__default__export__,
-    "teamMembers",
-    ()=>teamMembers
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-server.js [app-rsc] (ecmascript)");
 ;
 const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerClientReference"])(function() {
     throw new Error("Attempted to call the default export of [project]/src/app/(home)/Middle/TeamProfilePage.jsx <module evaluation> from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/app/(home)/Middle/TeamProfilePage.jsx <module evaluation>", "default");
-const teamMembers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerClientReference"])(function() {
-    throw new Error("Attempted to call teamMembers() from the server but teamMembers is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
-}, "[project]/src/app/(home)/Middle/TeamProfilePage.jsx <module evaluation>", "teamMembers");
 }),
 "[project]/src/app/(home)/Middle/TeamProfilePage.jsx [app-rsc] (client reference proxy)", ((__turbopack_context__) => {
 "use strict";
@@ -1633,18 +1752,13 @@ const teamMembers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mod
 // This file is generated by next-core EcmascriptClientReferenceModule.
 __turbopack_context__.s([
     "default",
-    ()=>__TURBOPACK__default__export__,
-    "teamMembers",
-    ()=>teamMembers
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-server-dom-turbopack-server.js [app-rsc] (ecmascript)");
 ;
 const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerClientReference"])(function() {
     throw new Error("Attempted to call the default export of [project]/src/app/(home)/Middle/TeamProfilePage.jsx from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/src/app/(home)/Middle/TeamProfilePage.jsx", "default");
-const teamMembers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$server$2d$dom$2d$turbopack$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerClientReference"])(function() {
-    throw new Error("Attempted to call teamMembers() from the server but teamMembers is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
-}, "[project]/src/app/(home)/Middle/TeamProfilePage.jsx", "teamMembers");
 }),
 "[project]/src/app/(home)/Middle/TeamProfilePage.jsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

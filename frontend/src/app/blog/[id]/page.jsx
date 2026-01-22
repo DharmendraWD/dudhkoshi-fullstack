@@ -10,8 +10,7 @@ import HTMLReactParser from 'html-react-parser';
 import bimg1 from "../../../../public/img/blog/blog1.jpg"
 import bimg2 from "../../../../public/img/blog/blog2.png"
 
-
-
+// Fallback statistics (kept as original)
 const STATISTICS = [
     { value: "500k", label: "cost savings" },
     { value: "$500k", label: "cost savings" },
@@ -19,227 +18,274 @@ const STATISTICS = [
     { value: "5%", label: "market shares growth" },
 ];
 
- let data =  [
- 
+// Fallback blog data
+const fallbackBlogs = [
     {
-      title:"Laxmi Sunrise Bank-led consortium to invest in 70 MW Dudhkoshi 2",
-      desc:`The project is being constructed at the Dudhkoshi River of the Solukhumbu district with an estimated project cost of Rs 15 billion. “This venture will play a crucial role in Nepal's renewable energy landscape,” reads a LSBL-issued press statement.  
-
-      <br>
-      <br>
-      <br>
-      KATHMANDU, Sept 25: The 70 MW Dudhkoshi 2 (Jaleshwor) Hydropower Project has accomplished its financial closure with a consortium of banks led by Laxmi Sunrise Bank Limited (LSBL) signing an agreement with its promoter Dudh Koshi Hydropower Nepal Pvt Ltd.
-
-
-<br>
-The project is being constructed at the Dudhkoshi River of the Solukhumbu district with an estimated project cost of Rs 15 billion. “This venture will play a crucial role in Nepal's renewable energy landscape,” reads a LSBL-issued press statement.  
-<br>
-<br>
-The banking consortium has committed to financing approximately 70 percent of the project cost, with the remaining 30 percent to be contributed by the project promoters and the public. The consortium comprises LSBL as the lead, Everest Bank as the co-lead and Sanima Bank as the member. Collectively, the total term loan amounts to Rs 10.5 billion.
-<br><br>
-
-The Dudhkoshi 2 (Jaleshwor) Hydropower Project had received the generation license from the Department of Electricity Development on September 23, 2020 and subsequently signed the power purchase agreement with Nepal Electricity Authority on November 22, 2021. The company is being promoted by Aayu Malun Hydropower Ltd, several prominent individual stakeholders and various private equity and venture capital.
-<br><br><br>
-
-Dudhkoshi 2 (Jaleshwor) Hydropower Project is anticipated to generate an estimated 417 GWh of power annually to the national grid and will be one of the large sized independent power producers (IPP) when it comes into operation by July 2029.
-<br>
-
-`,
-id:1,
-img:bimg1
+        id: 1,
+        title: "Laxmi Sunrise Bank-led consortium to invest in 70 MW Dudhkoshi 2",
+        content: `The project is being constructed at the Dudhkoshi River of the Solukhumbu district with an estimated project cost of Rs 15 billion. "This venture will play a crucial role in Nepal's renewable energy landscape," reads a LSBL-issued press statement.`,
+        cover_image: bimg1.src,
+        author_name: "Admin",
+        created_at: "2024-01-01T00:00:00.000Z",
+        desc: `The project is being constructed at the Dudhkoshi River of the Solukhumbu district with an estimated project cost of Rs 15 billion. "This venture will play a crucial role in Nepal's renewable energy landscape," reads a LSBL-issued press statement.`
     },
- 
     {
-      title:"दूधकोशी–२ आयोजनाको क्षमता बढेर पुग्यो ९६ मेगावाट, लागत पनि थपियो",
-      desc:`काठमाडौँ। निजी लगानीमा निर्माण सुरु भएको दूधकोशी–२ अर्धजलासय जलविद्युत आयोजनाको क्षमता बढेर ९५.७ मेगावाट पुगेको छ। यसअघि ७० मेगावाटमा आयोजना डिजाइन गरिएको थियो।
-
-दुधकोसी नदीमा पानीको वहाव पहिला अध्ययन गरेको भन्दा बढी देखिएपछि आयोजनाको क्षमता बढेको हो। यसअघि दूधकोसीमा पानीको वहाव प्रतिसेकेन्ड ६२ घनमिटरका आधारमा आयोजनाको डिजाइन ७० मेगावाट गरिएको थियो।
-
-पछिल्लो अध्ययनले पानीको बहाव प्रतिसेकेन्ड साढे ८३ घनमिटर आएपछि आयोजनाको जडित क्षमता बढेको आयोजना विकासकर्ता दूधकोशी हाइड्रोपावर नेपाल प्रालिका अध्यक्ष कदम केसीले बताए। जडित क्षमता बढाउनका लागि कम्पनीले विद्युत विकास विभागमा आवेदन दिएको उनले जनाएका दिए।
-<br>
-
-विभागको स्वीकृतिपछि नेपाल विद्युत प्राधिकरणसँग थप २५.७ मेगावाट विद्युत खरिद सम्झौता (पीपीए) हुने उनले सुनाए। यस्तै जडित क्षमता वृद्धिसँगै आयोजनाको लाग पनि बढेर २० अर्ब रुपैयाँ पुग्ने अध्यक्ष केसीले बताए। यसअघि आयोजनाको लागत १५ अर्ब रुपैयाँ अनुमान गरिएको थियो। आयोजनामा संस्थापकले स्वपुँजी (इक्विटी) र बैंकले पनि ऋण थप्नु पर्ने भएको छ।
-
-<br>
-<br>
-<br>
-
-आयोजनामा लक्ष्मी सनराइज बैंकको अगुवाईमा एभरेष्ट बैंक र सानिमा बैंकले आयोजनामा साढे १० अर्ब रुपैयाँ ऋण लगानी गर्ने भएको छन्। आयोजनामा बैंकहरुले थप लगानी गर्ने भएका छन्।
-आयोजना बनाउन नसकेपछि भारतीय कम्पनी आफ्नो स्वामित्व नेपालीलाई बिक्री गरेर आयोजनाबाट बाहिरिएको छ।
-
-आयोजनाको कुल अनुमानित लागतको ७० इक्विटी हुने गरी लगानी संरचना बनाइएको छ। जसअनुसार १० अर्ब ५० करोड रुपैयाँ बैंकको ऋण र बाँकी साढे चार अर्ब रुपैयाँ संस्थापकहरूको स्वपुँजी लगानी हुने गरी ऋण सम्झौता भएको छ। काम सुरु गरेको चार वर्षमा सम्पन्न हुने कम्पनीका अध्यक्ष केसीले जानकारी दिए।
-
-विद्युत प्राधिकरणसँग २०२१ नोभेम्बरमा आयोजनाबाट उत्पादन हुने बिजुली पीपीए भएको थियो। वर्षायाममा (जुनदेखि नोभेम्बर) सम्म प्रतियुनिट ४.८० रुपैयाँ र सुक्खा मौसममा (डिसेम्बरदेखि मे महिना) सम्म ८.४० रुपैयाँ रहेको छ।
-
-<br>
-<br>
-<br>
-
-आयोजनाबाट वार्षिक ४१ करोड ७४ लाख युनिट बिजुली उत्पादन हुने अध्ययनले देखाएको छ। क्षमता बढेकाले ऊर्जा उत्पादन पनि थपिने भएको छ। आयोजनाको प्रतिमेगावाट लागत २१ करोड ४३ लाख रुपैयाँ छ। आयोजनाको प्रतिफल १३.९७ प्रतिशत रहेको छ। इक्विटीमा प्रतिफल २१ प्रतिशत रहेको छ। आयोजनाले १२ वर्षमा ऋण चुक्ता गर्ने भएको छ। कम्पनीले बिजुली बेचेर औसत ५.९६ रुपैयाँ पाउने भएको छ।
-
-परियोजनाबाट उत्पादित बिजुली १२ किलोमिटर लामो १३२ केभी प्रसारण लाइनमार्फत पहिले नै सञ्चालनमा रहेको विद्युत प्राधिकरणको टिङ्ला सबस्टेशनमा जोड्ने प्रस्ताव गरिएको छ। ३५ मेगावाट क्षमताका दुई टवाईन जडान हुने भएको कम्पनीले जनाएको छ।
-
-दूधकोशी–२ लाई जुट्यो लगानी, लक्ष्मी सनराइज बैंकको अगुवाईमा साढे १० अर्ब ऋण
-
-दूधकोशी हाइड्रोपावर सन् २०१३ अक्टुबरमा स्थापना भएको हो। आयोजनाको डिजाइन डिस्चार्ज ६२.३० प्रतिसकेन्ड रहेको छ। क्यू ४० मा आयोजना डिजाइन गरिएको छ । सोलुखुम्बुको थुलुङ दूधकोशी गाउँपालिकामा पर्ने दूधकोशी नदीमा विद्युत उत्पादनको लागि विद्युत विकास विभागबाट २०७७ असोजमा इजाजतपत्र (लाइसेन्स) पाएको थियो।
-<br>
-<br>
-<br>
-
-यसअघि आयोजना सोलुखुम्बुमा थुलुङ दूधकोशीमा बाँध बनाइ सुरुङमार्गबाट खोटाङको ऐसेलुखर्क गाउँपालिकाको जलेश्वरीमा विद्युतगृह निर्माण गरी २३० मेगावाट उत्पादन गर्ने अनुमानसहित प्रक्रिया अगाडि बढाइएको थियो।
-
-यसअघि दूधकोशीको पानी करिब पाँच किलोमिटर सुरुङ मार्गमार्फत पुर्याउने योजना थियो। अहिले तीन किलोमिटर सुरुङमार्गमार्फत खन्याखर्कमा निर्माण हुने विद्युतगृहमा पुर्याइने भएको छ। जसकारण उत्पादन क्षमतासमेत २३० मेगावाटबाट घटेर ७० मेगावाटमा झरेको कम्पनीले जनाएको छ। अब फेरी बढेर ९६ मेगावाट पुग्नेछ।
-
-आयोजनाको नेतृत्व कदम केसीले गरेका छन्। यस्तै सञ्चालकहरुमा अभिज्ञा मल्ल, विक्रम गौतम, अरुण अग्रवाल, किरण मल्ल र हिमाल भट्टराई रहेका छन्। प्रमुख संस्थागत लगानीकर्ताहरूमा आयु मालुन हाइड्रोपावर लिमिटेड, टिम भेन्चर, सारथी इक्विटी फन्ड रहेका छन्।
-
-`,
-id:2,
-img:bimg2
+        id: 2,
+        title: "दूधकोशी–२ आयोजनाको क्षमता बढेर पुग्यो ९६ मेगावाट, लागत पनि थपियो",
+        content: `काठमाडौँ। निजी लगानीमा निर्माण सुरु भएको दूधकोशी–२ अर्धजलासय जलविद्युत आयोजनाको क्षमता बढेर ९५.७ मेगावाट पुगेको छ। यसअघि ७० मेगावाटमा आयोजना डिजाइन गरिएको थियो।`,
+        cover_image: bimg2.src,
+        author_name: "Admin",
+        created_at: "2024-01-02T00:00:00.000Z",
+        desc: `काठमाडौँ। निजी लगानीमा निर्माण सुरु भएको दूधकोशी–२ अर्धजलासय जलविद्युत आयोजनाको क्षमता बढेर ९५.७ मेगावाट पुगेको छ। यसअघि ७० मेगावाटमा आयोजना डिजाइन गरिएको थियो।`
     },
- 
+];
 
-  ]
-const StatCard = ({ stat }) => (
+// Function to fetch blog data by ID
+async function fetchBlogById(id) {
+    try {
+        const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
+        const BASE_CONTENT_URL = process.env.BASE_CONTENT_URL || 'http://localhost:4000/';
+        
+        const response = await fetch(`${BASE_API}/contents/blogs/${id}`, {
+            cache: 'no-store', // SSR - fresh data on every request
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data) {
+            // Handle both object and wrapped response formats
+            const blogData = data.data || data;
+            
+            return {
+                id: blogData.id || id,
+                title: blogData.title || 'Untitled Blog',
+                content: blogData.content || 'No content available',
+                cover_image: blogData.cover_image 
+                    ? `${BASE_CONTENT_URL}uploads/blogs/${blogData.cover_image.replace(/\//g, '')}`
+                    : bimg1.src,
+                author_name: blogData.author_name || 'Admin',
+                created_at: blogData.created_at || new Date().toISOString(),
+                desc: blogData.content || 'No description available'
+            };
+        }
+        
+        return null;
+    } catch (error) {
+        console.error(`Failed to fetch blog ${id}:`, error);
+        return null;
+    }
+}
+
+// Function to fetch all blogs for "Other Blogs" section
+async function fetchAllBlogs() {
+    try {
+        const BASE_API = process.env.NEXT_PUBLIC_BASE_API || 'http://localhost:3000/api';
+        const BASE_CONTENT_URL = process.env.NEXT_PUBLIC_BASE_CONTENT_URL || process.env.NEXT_PUBLIC_BASE_API || 'http://localhost:3000';
+        
+        const response = await fetch(`${BASE_API}/contents/blogs`, {
+            cache: 'no-store',
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // Handle different response formats
+        let blogData;
+        if (Array.isArray(data)) {
+            blogData = data;
+        } else if (data.data && Array.isArray(data.data)) {
+            blogData = data.data;
+        } else if (data.success && Array.isArray(data.data)) {
+            blogData = data.data;
+        } else {
+            blogData = [];
+        }
+        
+        if (blogData.length > 0) {
+            return blogData.map(blog => ({
+                id: blog.id,
+                title: blog.title || 'Untitled Blog',
+                content: blog.content || 'No content',
+                desc: blog.content ? blog.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...' : 'No description',
+                img: blog.cover_image 
+                    ? `${BASE_CONTENT_URL}uploads/blogs/${blog.cover_image.replace(/^\//, '')}`
+                    : (blog.id % 2 === 0 ? bimg2.src : bimg1.src),
+                author_name: blog.author_name || 'Admin',
+                created_at: blog.created_at || new Date().toISOString()
+            }));
+        }
+        
+        return fallbackBlogs;
+    } catch (error) {
+        console.error('Failed to fetch blogs:', error);
+        return fallbackBlogs;
+    }
+}
+
+// Function to format date
+function formatDate(dateString) {
+    if (!dateString) return '';
     
-    <div className="bg-[#e9e9e9] p-6 rounded-[24px] shadow-2xl text-center h-full transition duration-300 hover:shadow-blue-300/50">
-        <p className="text-4xl sm:text-5xl font-extrabold text-indigo-700 mb-1">
-            {stat.value}
-        </p>
-        <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-            {stat.label}
-        </p>
-    </div>
-);
+    try {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    } catch (error) {
+        console.error('Error formatting date:', error);
+        return '';
+    }
+}
 
-export default async  function NewsDets(props) {
+
+export default async function NewsDets(props) {
     const { params } = props;
-  const awaitedParams = await params;
-  const id = awaitedParams.id-1;
+    const awaitedParams = await params;
+    const id = awaitedParams.id;
+    
+    // Fetch current blog data
+    const currentBlog = await fetchBlogById(id);
+    // Fetch all blogs for "Other Blogs" section
+    const allBlogs = await fetchAllBlogs();
+    
+    // Filter out current blog from "Other Blogs"
+    const otherBlogs = allBlogs.filter(blog => blog.id.toString() !== id.toString()).slice(0, 3);
+    
+    // Use fallback if API returns null
+    const blogData = currentBlog || {
+        ...fallbackBlogs.find(b => b.id.toString() === id.toString()) || fallbackBlogs[0],
+        id: id
+    };
 
-
-
-
-
-    const backgroundImage = data[id].img.src || wp;
+    const backgroundImage = blogData?.cover_image || wp.src;
 
     return (
         <>
-        {/* <Navbar></Navbar> */}
-        <div className="min-h-[100vh] flex items-end justify-center font-[Inter] relative overflow-hidden bg-gray-100">
-            
-            {/* Background Image and Overlay Container */}
-            <div className="absolute inset-0 z-0">
-                <div
-                    className="w-full h-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${backgroundImage})` }}
-                >
-                    {/* Dark Overlay for Text Readability */}
-                    <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
-                </div>
-            </div>
-
-            {/* Content Container (z-10 for stacking above the background) */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 m-auto">
-
-                {/* Main Text Content */}
-                <div className="text-center flex flex-col justify-around mb-12">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
-                        {data[id].title  ?? " "} 
-                    </h1>
-                    <div className="mt-4 multiline-ellipsis2 text-lg text-gray-200 max-w-3xl mx-auto px-4 sm:px-0">
-                    
-                    {HTMLReactParser(data[id].desc)}
-          
+            <div className="min-h-[100vh] flex items-end justify-center font-[Inter] relative overflow-hidden bg-gray-100">
+                {/* Background Image and Overlay Container */}
+                <div className="absolute inset-0 z-0">
+                    <div
+                        className="w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${backgroundImage})` }}
+                    >
+                        {/* Dark Overlay for Text Readability */}
+                        <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
                     </div>
                 </div>
 
-            </div>
-        </div>
-        
-         {/* ------------------------------------- */}
-         <div className="min-h-screen py-12 sm:py-16 md:py-20 font-[Inter] bg-[#e9e9e9]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                {/* Responsive Grid Container */}
-                <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
-                    
-                    {/* Column 1: Main Content (Takes up 2/3 of the width on medium/large screens) */}
-                    <div className="md:col-span-2 mb-10 md:mb-0">
-                        <NewsStudy  data={data} id={id}/>
-                    </div>
-
-                    {/* Column 2: Newsletter Sidebar (Takes up 1/3 of the width on medium/large screens) */}
-                    <div className="md:col-span-1">
-                        {/* <NewsletterSidebar /> */}
-                    </div>
-
-                </div>
-            </div>
-        </div> 
-
-        <div>
-<div className='max-w-7xl mx-auto mt-8 mb-8 flex gap-4 justify-between'>
-    <h1 className='text-xl ml-3 font-semibold'>Other Blogs</h1>
-    {/* <Link  href="/blog">
-    <button className='bg-[#9999db] cursor-pointer px-[20px] py-[7px] text-[#272797]'>
-        See all
-    </button>
-    </Link> */}
-</div>
-<div style={{justifyItems:"center"}} className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-white">
+                {/* Content Container (z-10 for stacking above the background) */}
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 m-auto">
+                    {/* Main Text Content */}
+                    <div className="text-center flex flex-col justify-around mb-12">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
+                            {blogData.title}
+                        </h1>
+                        
+                        {/* Author and Date Info */}
+                        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center text-gray-200 gap-4">
+                            <div className="flex items-center gap-2">
+                                <span className="font-medium">By {blogData.author_name}</span>
+                            </div>
+                            <div className="text-gray-300">
+                                {formatDate(blogData.created_at)}
+                            </div>
+                        </div>
     
-
-   {
-    data?.map((blog, index) => (
-        <div key={index} className="bg-white max-w-[400px] min-w-[400px] justify-between rounded-2xl rounded-br-[95px] shadow-xl transition-all duration-300 hover:shadow-2xl overflow-hidden flex flex-col h-full">
-            {/* Image Container */}
-            <div className="w-full h-auto overflow-hidden p-4">
-                <Image
-                width={300}
-                height={300}
-            // <img  src={`${BASE_CONTENT}/${member.image.replace(/\\/g, '/')}`}  className="team-img" />
-
-                   src={blog.img}
-                    alt={blog.title ?? " "}
-                    className="w-[100%] h-[200px] object-cover transition duration-500 ease-in-out hover:scale-[1.03]"
-                    // Fallback placeholder image on error\
-                    unoptimized
-                   
-                />
+                    </div>
+                </div>
             </div>
             
-            {/* Content Area */}
-            <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-semibold text-gray-800 leading-snug mb-3">
-                   {blog.title ?? " "}
-                </h3>
-                <div className="text-base multiline-ellipsis text-gray-600 mb-4 flex-grow">
-                     {HTMLReactParser(blog?.desc)} 
+            {/* ------------------------------------- */}
+            <div className="min-h-screen py-12 sm:py-16 md:py-20 font-[Inter] bg-[#e9e9e9]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Responsive Grid Container */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
+                        {/* Column 1: Main Content */}
+                        <div className="md:col-span-2 mb-10 md:mb-0">
+                            <NewsStudy blogData={blogData} />
+                        </div>
+                    </div>
                 </div>
-                <Link href={`/blog/${blog.id}`} className="text-blue-600 font-medium hover:text-blue-700 transition duration-150 self-start">
-                    Read more
-                </Link>
             </div>
-        </div>
-    ))
-   }
-</div>
-</div>
-<Footer></Footer>
+
+            {/* Other Blogs Section */}
+            {otherBlogs.length > 0 && (
+                <div className="bg-white py-12">
+                    <div className='max-w-7xl mx-auto mb-8 flex gap-4 justify-between items-center'>
+                        <h1 className='text-3xl font-bold text-gray-900 ml-3'>Other Blogs</h1>
+                        <Link href="/blog">
+                            <button className='bg-[#9999db] cursor-pointer px-6 py-3 text-[#272797] font-medium rounded-lg hover:bg-[#8888cc] transition duration-150'>
+                                See all
+                            </button>
+                        </Link>
+                    </div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {otherBlogs.map((blog, index) => (
+                                <div key={index} className="bg-white rounded-2xl rounded-br-[95px] shadow-xl transition-all duration-300 hover:shadow-2xl overflow-hidden flex flex-col h-full">
+                                    {/* Image Container */}
+                                    <div className="w-full h-auto overflow-hidden p-4">
+                                        <Image
+                                            width={400}
+                                            height={200}
+                                            src={blog.img}
+                                            alt={blog.title}
+                                            className="w-full h-[200px] object-cover transition duration-500 ease-in-out hover:scale-[1.03]"
+                                            unoptimized
+                                  
+                                        />
+                                    </div>
+                                    
+                                    {/* Content Area */}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <h3 className="text-2xl font-semibold text-gray-800 leading-snug mb-3 line-clamp-2">
+                                            {blog.title}
+                                        </h3>
+                                        
+                                        {/* Author and Date Info */}
+                                        <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                                            <div className="flex items-center">
+                                                <span className="font-medium">By {blog.author_name}</span>
+                                            </div>
+                                            <div className="text-gray-400">
+                                                {formatDate(blog.created_at)}
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="text-base text-gray-600 mb-4 flex-grow line-clamp-3">
+                                            {blog.desc}
+                                        </div>
+                                        
+                                        <Link href={`/blog/${blog.id}`} className="text-blue-600 font-medium hover:text-blue-700 transition duration-150 self-start mt-auto">
+                                            Read more →
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+            
+            <Footer />
+            
+        
         </>
     );
 }
 
-
-
-
-
-
 // Newsletter Sidebar Component
 const NewsletterSidebar = () => {
     return (
-         <>
-        {/* // The container uses a large, vibrant background for emphasis */}
         <div className="p-8 bg-indigo-700 rounded-3xl sticky top-8 md:top-12 self-start shadow-xl">
             <h3 className="text-2xl font-bold text-white mb-2">
                 Join newsletter
@@ -247,42 +293,34 @@ const NewsletterSidebar = () => {
             <p className="text-indigo-200 text-sm mb-6">
                 Stay up to date with new case studies. We promise no spam, just good content.
             </p>
-
-
-<Form></Form>
+            <Form />
         </div>
-       
-        
-        </>
     );
 };
 
 // Main Case Study Content Component
-const NewsStudy = async({data, id}) => {
-
-
+const NewsStudy = ({ blogData }) => {
     return (
-        <>
-        <div className="text-gray-700 leading-relaxed  space-y-8">
+        <div className="text-gray-700 leading-relaxed space-y-8">
             <section>
-                <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
-                                    {data[id].title || null}
-
+                <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
+                    {blogData.title}
                 </h2>
-                <div className="text-lg">
-                 
-                               {HTMLReactParser(data[id].desc)}
-
+                
+                {/* Author and Date Info */}
+                <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+                    <div className="flex items-center gap-2">
+                        <span className="text-lg font-medium text-gray-700">By {blogData.author_name}</span>
+                    </div>
+                    <div className="text-gray-500">
+                        {formatDate(blogData.created_at)}
+                    </div>
+                </div>
+                
+                <div className="text-lg prose max-w-none">
+                    {HTMLReactParser(blogData.content || 'No content available')}
                 </div>
             </section>
-
-        
-
-
-    
         </div>
-
-</>
     );
 };
-

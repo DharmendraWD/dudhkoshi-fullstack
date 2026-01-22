@@ -136,13 +136,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$animation$2f$hooks$2f$use$2d$animation$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/animation/hooks/use-animation.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
+// Import fallback images
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$11$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$11$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/11.png.mjs { IMAGE => "[project]/public/img/proj/11.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$23$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$23$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/23.png.mjs { IMAGE => "[project]/public/img/proj/23.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$24$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$24$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/24.png.mjs { IMAGE => "[project]/public/img/proj/24.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$25$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$25$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/25.png.mjs { IMAGE => "[project]/public/img/proj/25.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$26$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$26$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/26.png.mjs { IMAGE => "[project]/public/img/proj/26.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$27$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$27$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/img/proj/27.png.mjs { IMAGE => "[project]/public/img/proj/27.png (static in ecmascript, tag client)" } [app-ssr] (structured image object with data url, ecmascript)');
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -155,10 +156,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 ;
 // --- Configuration ---
-const DURATION = 35; // seconds for one full loop (slower for stability)
+const DURATION = 35;
 const IMAGE_WIDTH_PX = 250;
-const GAP_PX = 16; // gap-4
-const images = [
+const GAP_PX = 16;
+// Fallback images array
+const fallbackImages = [
     __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$11$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$11$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src,
     __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$23$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$23$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src,
     __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$24$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$24$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src,
@@ -166,18 +168,47 @@ const images = [
     __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$26$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$26$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src,
     __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$img$2f$proj$2f$27$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$img$2f$proj$2f$27$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"].src
 ];
-// To ensure the carousel is always full and smooth during the reset, 
-// we triple the image array.
-const carouselImages = [
-    ...images,
-    ...images,
-    ...images
-];
-// Calculate the width of one full set of original images (6 images + 5 gaps)
-const SINGLE_SET_WIDTH_PX = IMAGE_WIDTH_PX * images.length + GAP_PX * (images.length - 1);
-// The total width of the motion.div (3 sets of images + 2*5 gaps)
-const CONTAINER_WIDTH_PX = SINGLE_SET_WIDTH_PX * 3 + GAP_PX * 2;
-// ----------------------
+// Function to fetch hero images
+const fetchHeroImages = async ()=>{
+    try {
+        const BASE_API = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:4000/api';
+        const response = await fetch(`${BASE_API}/contents/herosectionimg`, {
+            cache: 'no-cache',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        // Handle different response formats
+        let imageArray;
+        if (Array.isArray(data)) {
+            imageArray = data;
+        } else if (data.data && Array.isArray(data.data)) {
+            imageArray = data.data;
+        } else if (data.success && data.data) {
+            imageArray = Array.isArray(data.data) ? data.data : [];
+        } else {
+            imageArray = [];
+        }
+        // Transform images to full URLs
+        return imageArray.map((item)=>{
+            const imagePath = item.image || item.url || item.src;
+            if (!imagePath) return null;
+            if (imagePath.startsWith('http')) {
+                return imagePath;
+            }
+            // Construct full URL
+            const baseUrl = ("TURBOPACK compile-time value", "http://localhost:4000/") || 'http://localhost:4000';
+            return `${baseUrl}${imagePath.replace(/^\//, '')}`;
+        }).filter(Boolean);
+    } catch (error) {
+        console.error('Error fetching hero images:', error);
+        return [];
+    }
+};
 const ImageCard = ({ src, alt, width, height })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex-shrink-0 rounded-xl shadow-lg overflow-hidden",
         style: {
@@ -185,31 +216,61 @@ const ImageCard = ({ src, alt, width, height })=>/*#__PURE__*/ (0, __TURBOPACK__
             height: `${height}px`
         },
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+            unoptimized: true,
             width: width,
             height: height,
             src: src,
             alt: alt,
-            className: "w-full h-full object-cover"
+            className: "w-full h-full object-cover",
+            loading: "lazy"
         }, void 0, false, {
             fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-            lineNumber: 44,
+            lineNumber: 84,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-        lineNumber: 40,
+        lineNumber: 80,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 const SameDirectionScrollCarousel = ()=>{
     const controlsTop = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$animation$2f$hooks$2f$use$2d$animation$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAnimation"])();
     const controlsBottom = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$animation$2f$hooks$2f$use$2d$animation$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAnimation"])();
     const [isHovering, setIsHovering] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // 1. Define Animation Variants (Same direction for both)
+    const [images, setImages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(fallbackImages);
+    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    // Fetch images on client-side
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const loadImages = async ()=>{
+            setIsLoading(true);
+            try {
+                const apiImages = await fetchHeroImages();
+                if (apiImages.length > 0) {
+                    setImages(apiImages);
+                } else {
+                    // Use fallback if API returns empty array
+                    setImages(fallbackImages);
+                }
+            } catch (error) {
+                console.error('Failed to load images:', error);
+                setImages(fallbackImages);
+            } finally{
+                setIsLoading(false);
+            }
+        };
+        loadImages();
+    }, []);
+    // Tripled images for smooth infinite scroll
+    const carouselImages = [
+        ...images,
+        ...images,
+        ...images
+    ];
+    const SINGLE_SET_WIDTH_PX = IMAGE_WIDTH_PX * images.length + GAP_PX * (images.length - 1);
+    const CONTAINER_WIDTH_PX = SINGLE_SET_WIDTH_PX * 3 + GAP_PX * 2;
+    // Animation variants
     const scrollVariants = {
         scroll: {
-            // Move left by the width of exactly ONE set of images.
-            // When it reaches this point, the second set fills the space, and 
-            // the transition loops back to the start (0).
             x: `-${SINGLE_SET_WIDTH_PX}px`,
             transition: {
                 x: {
@@ -221,23 +282,22 @@ const SameDirectionScrollCarousel = ()=>{
             }
         },
         paused: {
-            // Keeps the animation at its current position
             transition: {
                 duration: 0
             }
         }
     };
-    // 2. Start both animations when the component mounts
+    // Start animations when component mounts and images are loaded
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // We start the bottom row slightly offset in its sequence 
-        // to make the two rows look less repetitive initially.
-        controlsTop.start('scroll');
-        controlsBottom.start('scroll');
+        if (!isLoading) {
+            controlsTop.start('scroll');
+            controlsBottom.start('scroll');
+        }
     }, [
+        isLoading,
         controlsTop,
         controlsBottom
     ]);
-    // 3. Handle Hover Events
     const handleMouseEnter = ()=>{
         setIsHovering(true);
         controlsTop.stop();
@@ -248,6 +308,65 @@ const SameDirectionScrollCarousel = ()=>{
         controlsTop.start('scroll');
         controlsBottom.start('scroll');
     };
+    // Loading state
+    if (isLoading) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "w-full overflow-hidden py-10 bg-white",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col gap-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex gap-4 animate-pulse",
+                        children: [
+                            ...Array(6)
+                        ].map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-shrink-0 rounded-xl bg-gray-200",
+                                style: {
+                                    width: `${IMAGE_WIDTH_PX}px`,
+                                    height: '160px'
+                                }
+                            }, `loading-top-${i}`, false, {
+                                fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+                                lineNumber: 180,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+                        lineNumber: 178,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex gap-4 animate-pulse",
+                        children: [
+                            ...Array(6)
+                        ].map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-shrink-0 rounded-xl bg-gray-200",
+                                style: {
+                                    width: `${IMAGE_WIDTH_PX}px`,
+                                    height: '160px'
+                                }
+                            }, `loading-bottom-${i}`, false, {
+                                fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+                                lineNumber: 189,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+                        lineNumber: 187,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+                lineNumber: 177,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
+            lineNumber: 176,
+            columnNumber: 13
+        }, ("TURBOPACK compile-time value", void 0));
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full overflow-hidden py-10 bg-white",
         onMouseEnter: handleMouseEnter,
@@ -264,52 +383,51 @@ const SameDirectionScrollCarousel = ()=>{
                     animate: isHovering ? 'paused' : controlsTop,
                     children: carouselImages.map((src, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ImageCard, {
                             src: src,
-                            alt: `Top Scroll Image ${index + 1}`,
+                            alt: `Hero Image ${index % images.length + 1}`,
                             width: IMAGE_WIDTH_PX,
                             height: 160
                         }, `top-${index}`, false, {
                             fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-                            lineNumber: 121,
+                            lineNumber: 216,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-                    lineNumber: 114,
+                    lineNumber: 209,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                     className: "flex flex-row gap-4",
                     style: {
                         width: `${CONTAINER_WIDTH_PX}px`,
-                        // Apply a slight initial offset to the second row for a varied look
                         transform: `translateX(-${IMAGE_WIDTH_PX * 1.5}px)`
                     },
                     variants: scrollVariants,
                     animate: isHovering ? 'paused' : controlsBottom,
                     children: carouselImages.slice().reverse().map((src, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ImageCard, {
                             src: src,
-                            alt: `Bottom Scroll Image ${index + 1}`,
+                            alt: `Hero Image ${index % images.length + 1}`,
                             width: IMAGE_WIDTH_PX,
                             height: 160
                         }, `bottom-${index}`, false, {
                             fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-                            lineNumber: 144,
+                            lineNumber: 237,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-                    lineNumber: 132,
+                    lineNumber: 227,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-            lineNumber: 111,
+            lineNumber: 207,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/app/(home)/InfiniteScrollingImage.jsx",
-        lineNumber: 106,
+        lineNumber: 202,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

@@ -957,7 +957,7 @@ const deleteMissionImage = async (req, res) => {
 // TEAM SECTION 
 // create team 
 const createTeam = async (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, designation } = req.body;
   const dp = req.file ? req.file.filename : null;
 
   try {
@@ -977,9 +977,9 @@ const createTeam = async (req, res) => {
 
     // Insert into team table
     const [result] = await pool.query(
-      `INSERT INTO team (name, dp, description)
-       VALUES (?, ?, ?)`,
-      [name, dp, description]
+      `INSERT INTO team (name, dp, description, designation)
+       VALUES (?, ?, ?, ?)`,
+      [name, dp, description, designation]
     );
 
     // Fetch newly created record
@@ -1635,6 +1635,7 @@ const other = async (req, res) => {
       yt,
       twitter,
       fb,
+      email,
     } = req.body;
 
     // Basic validation (adjust if some fields are optional)
@@ -1665,8 +1666,8 @@ const other = async (req, res) => {
       await pool.query(
         `INSERT INTO other
         (a, b, c, d, developedby, copyright, location,
-         mobNo2, mobNo, insta, address, yt, twitter, fb)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+         mobNo2, mobNo, insta, address, yt, twitter, fb, email)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
         [
           a,
           b,
@@ -1682,6 +1683,7 @@ const other = async (req, res) => {
           yt || null,
           twitter || null,
           fb || null,
+          email || null
         ]
       );
     }
@@ -1702,7 +1704,8 @@ const other = async (req, res) => {
           address = ?,
           yt = ?,
           twitter = ?,
-          fb = ?
+          fb = ?,
+          email = ?
         WHERE id = 1`,
         [
           a,
@@ -1719,6 +1722,7 @@ const other = async (req, res) => {
           yt || null,
           twitter || null,
           fb || null,
+          email || null
         ]
       );
     }
@@ -1744,6 +1748,7 @@ const other = async (req, res) => {
       yt: other[0].yt,
       twitter: other[0].twitter,
       fb: other[0].fb,
+      email: other[0].email,
     };
 
     return res.json({

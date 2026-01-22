@@ -24,7 +24,9 @@
     --foreground: #ededed;
   }
 }
-
+.image-gallery-image img{
+  width: 100% !important;
+}
 body {
   background: var(--background);
   color: var(--foreground);
