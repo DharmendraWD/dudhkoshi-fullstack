@@ -217,7 +217,7 @@ export default function TeamPage() {
           onClose={() => {
             setIsAddModalOpen(false);
             setSelectedFile(null);
-            setNewMember({ name: "", description: "" });
+            setNewMember({ name: "", description: "", designation: "" });
           }}
           title="Add New Team Member"
           primaryAction={handleCreateTeamMember}
