@@ -1,11 +1,10 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/admin/(admin)/change-password/page": "app/admin/(admin)/change-password/page.js",
+  "/admin/(admin)/about/page": "app/admin/(admin)/about/page.js",
   "/admin/(admin)/dashboard/page": "app/admin/(admin)/dashboard/page.js",
-  "/admin/(admin)/manage-users/page": "app/admin/(admin)/manage-users/page.js",
+  "/admin/(admin)/hero/page": "app/admin/(admin)/hero/page.js",
+  "/admin/(admin)/mission/page": "app/admin/(admin)/mission/page.js",
   "/admin/(admin)/others/page": "app/admin/(admin)/others/page.js",
   "/admin/(admin)/team/page": "app/admin/(admin)/team/page.js",
   "/admin/(auth)/login/page": "app/admin/(auth)/login/page.js",
-  "/blog/[id]/page": "app/blog/[id]/page.js",
   "/page": "app/page.js"
 }

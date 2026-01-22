@@ -96,7 +96,6 @@
     --color-blue-50: #eff6ff;
     --color-blue-100: #dbeafe;
     --color-blue-200: #bedbff;
-    --color-blue-300: #90c5ff;
     --color-blue-500: #3080ff;
     --color-blue-600: #155dfc;
     --color-blue-700: #1447e6;
@@ -145,7 +144,6 @@
     --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
-    --container-3xl: 48rem;
     --container-4xl: 56rem;
     --container-5xl: 64rem;
     --container-6xl: 72rem;
@@ -229,7 +227,6 @@
       --color-blue-50: lab(96.492% -1.14647 -5.11479);
       --color-blue-100: lab(92.0301% -2.24757 -11.6453);
       --color-blue-200: lab(86.15% -4.04379 -21.0797);
-      --color-blue-300: lab(77.5052% -6.4629 -36.42);
       --color-blue-500: lab(54.1736% 13.3368 -74.6839);
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-blue-700: lab(36.9089% 35.0961 -85.6872);
@@ -1042,10 +1039,6 @@
     max-height: 100px;
   }
 
-  .max-h-\[200px\] {
-    max-height: 200px;
-  }
-
   .max-h-\[400px\] {
     max-height: 400px;
   }
@@ -1222,10 +1215,6 @@
     max-width: var(--container-2xl);
   }
 
-  .max-w-3xl {
-    max-width: var(--container-3xl);
-  }
-
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -1270,10 +1259,6 @@
     max-width: 300px;
   }
 
-  .max-w-\[400px\] {
-    max-width: 400px;
-  }
-
   .max-w-\[1400px\] {
     max-width: 1400px;
   }
@@ -1308,10 +1293,6 @@
 
   .min-w-\[100\%\] {
     min-width: 100%;
-  }
-
-  .min-w-\[400px\] {
-    min-width: 400px;
   }
 
   .flex-1 {
@@ -1638,10 +1619,6 @@
 
   .rounded-\[2rem\] {
     border-radius: 2rem;
-  }
-
-  .rounded-\[24px\] {
-    border-radius: 24px;
   }
 
   .rounded-\[30px\] {
@@ -2285,10 +2262,6 @@
 
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
-  }
-
-  .py-\[7px\] {
-    padding-block: 7px;
   }
 
   .pt-0 {
@@ -3380,18 +3353,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:shadow-blue-300\/50:hover {
-      --tw-shadow-color: #90c5ff80;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:shadow-blue-300\/50:hover {
-        --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-blue-300) 50%, transparent) var(--tw-shadow-alpha), transparent);
-      }
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:shadow-indigo-200:hover {
       --tw-shadow-color: #c7d2ff;
     }
@@ -3760,12 +3721,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:px-0 {
-      padding-inline: calc(var(--spacing) * 0);
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:px-3 {
       padding-inline: calc(var(--spacing) * 3);
     }
@@ -3915,12 +3870,6 @@
   @media (min-width: 48rem) {
     .md\:top-12 {
       top: calc(var(--spacing) * 12);
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:col-span-1 {
-      grid-column: span 1 / span 1;
     }
   }
 

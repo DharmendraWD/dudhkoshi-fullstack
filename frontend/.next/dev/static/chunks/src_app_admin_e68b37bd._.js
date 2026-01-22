@@ -200,8 +200,8 @@ function LoginPage() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        email: "ecxample@gmail.com",
-        password: "1"
+        email: "",
+        password: ""
     });
     const handleLogin = async (e)=>{
         e.preventDefault();
@@ -714,7 +714,7 @@ function LoginPage() {
         columnNumber: 5
     }, this);
 }
-_s(LoginPage, "EKZFm3l58uebHLkPvM0Y+bYUV1U=", false, function() {
+_s(LoginPage, "GpTIGmtEOfoe7+629mbtD6UiqNE=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];

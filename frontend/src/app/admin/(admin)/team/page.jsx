@@ -171,6 +171,9 @@ export default function TeamPage() {
                   <h3 className="text-lg font-bold text-slate-800 mb-2 truncate">
                     {member.name}
                   </h3>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2 truncate">
+                    {member.designation}
+                  </h3>
                   <p className="text-sm text-slate-500 line-clamp-2">
                     {member.description}
                   </p>
