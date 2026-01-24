@@ -49,6 +49,84 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/admin/about",
+      "regex": "^/admin/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/about(?:/)?$"
+    },
+    {
+      "page": "/admin/blogs",
+      "regex": "^/admin/blogs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/blogs(?:/)?$"
+    },
+    {
+      "page": "/admin/change-password",
+      "regex": "^/admin/change\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/change\\-password(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/admin/faqs",
+      "regex": "^/admin/faqs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/faqs(?:/)?$"
+    },
+    {
+      "page": "/admin/gallery",
+      "regex": "^/admin/gallery(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/gallery(?:/)?$"
+    },
+    {
+      "page": "/admin/hero",
+      "regex": "^/admin/hero(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/hero(?:/)?$"
+    },
+    {
+      "page": "/admin/login",
+      "regex": "^/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/login(?:/)?$"
+    },
+    {
+      "page": "/admin/manage-users",
+      "regex": "^/admin/manage\\-users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/manage\\-users(?:/)?$"
+    },
+    {
+      "page": "/admin/messages",
+      "regex": "^/admin/messages(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/messages(?:/)?$"
+    },
+    {
+      "page": "/admin/mission",
+      "regex": "^/admin/mission(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/mission(?:/)?$"
+    },
+    {
+      "page": "/admin/others",
+      "regex": "^/admin/others(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/others(?:/)?$"
+    },
+    {
+      "page": "/admin/team",
+      "regex": "^/admin/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/team(?:/)?$"
+    },
+    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},

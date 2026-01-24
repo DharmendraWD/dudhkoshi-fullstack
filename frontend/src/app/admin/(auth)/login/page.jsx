@@ -58,7 +58,7 @@ const handleLogin = async (e) => {
   secure: process.env.NODE_ENV === "production",
   sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   domain: process.env.NODE_ENV === "production"
-    ? "http://dudhkoshihydro.com.np"
+    ? "dudhkoshihydro.com.np"
     : "localhost",
 });
 

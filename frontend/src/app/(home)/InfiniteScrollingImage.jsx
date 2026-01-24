@@ -27,21 +27,27 @@ const fallbackImages = [
 ];
 
 // Function to fetch hero images
+
+
+
 const fetchHeroImages = async () => {
+    // console.log(process.env.NEXT_PUBLIC_API_BASE_URL, "process.env.NEXT_PUBLIC_API_BASE_URL")
   try {
-    const BASE_API = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:4000/api';
+    const BASE_API = process.env.NEXT_PUBLIC_BASE_API || 'http://localhost:4000/api';
     const response = await fetch(`${BASE_API}/contents/herosectionimg`, {
-      cache: 'no-cache', // Fresh data for client-side
+        next: { revalidate: 60 }, // Revalidate every 60 seconds
       headers: {
         'Content-Type': 'application/json',
       },
     });
     
+    console.log(response)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
     const data = await response.json();
+    console.log(data)
     
     // Handle different response formats
     let imageArray;

@@ -1,9 +1,6 @@
-:HL["/_next/static/chunks/11568bb0dfb20ad1.css","style"]
-:HL["/_next/static/chunks/92775ae1698e5da0.css","style"]
-:HL["/_next/static/chunks/8d1a5d197490fbe3.css","style"]
+:HL["/_next/static/chunks/db0ec367f786b572.css","style"]
 :HL["/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf","font",{"crossOrigin":"","type":"font/otf"}]
 :HL["/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/chunks/330ff2f9e35685fa.css","style"]
-:HL["/_next/static/chunks/69de7e8fcda4581a.css","style"]
-0:{"buildId":"tq1Z_Labp-76HQazXh4CK","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/_next/static/chunks/fc411b802c953a3a.css","style"]
+0:{"buildId":"Mtqp1czKUgkerGt3t4czT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

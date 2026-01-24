@@ -1,6 +1,0 @@
-[00:00:01.545] Server  LOG      ✓ Ready in 1086ms
-[00:00:04.748] Server  LOG      ○ Compiling / ...
-[00:00:06.935] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:09.054] Browser WARN    Image with src "http://localhost:3000/_next/static/media/blog1.c26b0c54.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:09.054] Browser WARN    Image with src "http://localhost:3000/_next/static/media/blog2.aa1d64d6.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.

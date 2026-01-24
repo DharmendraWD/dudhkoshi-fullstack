@@ -45,7 +45,8 @@ export default function Footer() {
         const BASE_APIw = process.env.NEXT_PUBLIC_BASE_API || 'http://localhost:30000/api';
         
         const response = await fetch(`${BASE_APIw}/contents/other`, {
-          cache: 'no-cache',
+                 next: { revalidate: 60 }, // Revalidate every 60 seconds
+
           headers: {
             'Content-Type': 'application/json',
           },

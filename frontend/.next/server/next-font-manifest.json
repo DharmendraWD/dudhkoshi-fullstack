@@ -5,6 +5,71 @@
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
+    "[project]/src/app/admin/(admin)/about/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/blogs/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/change-password/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/dashboard/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/faqs/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/gallery/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/hero/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/manage-users/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/messages/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/mission/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/others/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(admin)/team/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/src/app/admin/(auth)/login/page": [
+      "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
     "[project]/src/app/blog/[id]/page": [
       "static/media/OPTITimes_Roman-s.p.a8d2c1aa.otf",
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",

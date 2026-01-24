@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2026 at 02:20 PM
+-- Generation Time: Jan 24, 2026 at 05:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,7 @@ CREATE TABLE `aboutusimage` (
 --
 
 INSERT INTO `aboutusimage` (`id`, `fullImage`, `firstCardImage`) VALUES
-(1, '1768985240347-954676847.jpg', '1768987804077-948270885.png');
+(1, '1768985240347-954676847.jpg', '1769268199614-223365660.jpeg');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,8 @@ CREATE TABLE `blogs` (
 INSERT INTO `blogs` (`id`, `title`, `content`, `cover_image`, `author_id`, `author_name`, `created_at`, `updated_at`) VALUES
 (6, 'titlesm asladandakn', '<p>cont<br><br><em>ent|sa</em><br><br><strong><em>heading twdw</em></strong></p><p></p>', '1768836894910-899694516.png', 2, 'bbbb', '2026-01-19 15:34:54', '2026-01-21 16:16:38'),
 (9, 'tesiklda kadla dlkada dacngkeslgjs', '<p><span style=\"color: lab(8.11897 0.811279 -12.254);\"><strong>3. What is the scheduled completion timeline?</strong></span></p><p></p><p></p><p></p><p><span style=\"color: rgb(83, 91, 96);\">For<strong> those who are interested in finding random paragraphs, that\'s exactly what this webpage provides. If both a </strong></span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://randomword.com/\"><strong>random word</strong></a><span style=\"color: rgb(83, 91, 96);\"><strong> and a </strong></span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://randomword.com/sentence\"><strong>random sentence</strong></a><span style=\"color: rgb(83, 91, 96);\"><strong> aren\'t quite long enough fo</strong>r your needs, then a random paragraph might be the perfect solution. Once you arrive at this page, you\'ll see a ra<em>ndom paragraph. If y</em>ou need another one, all you need to do is click on the \"next paragraph\" button. If you happen to need several random paragraphs all at once, you can use this othe</span></p>', '1768986802917-883444561.jpeg', 2, 'bbbb', '2026-01-21 09:13:22', '2026-01-21 09:13:22'),
-(10, ',adn,ad a,da', '<p>adadnada,da</p><p></p><img src=\"https://randomwordgenerator.com/img/picture-generator/57e2dd474f53ae14f1dc8460962e33791c3ad6e04e5074417d2e7ed6954bc7_640.jpg\"><p></p>', '1768986876676-665557366.jpeg', 2, 'bbbb', '2026-01-21 09:14:36', '2026-01-21 09:14:36');
+(10, ',adn,ad a,da', '<p>adadnada,da</p><p></p><img src=\"https://randomwordgenerator.com/img/picture-generator/57e2dd474f53ae14f1dc8460962e33791c3ad6e04e5074417d2e7ed6954bc7_640.jpg\"><p></p>', '1768986876676-665557366.jpeg', 2, 'bbbb', '2026-01-21 09:14:36', '2026-01-21 09:14:36'),
+(11, 'blog ttitle', '<p>dnda dakd ad a</p>', '1769268278249-642624539.jpg', 7, 'Dudhkoshi', '2026-01-24 15:24:38', '2026-01-24 15:24:38');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,8 @@ INSERT INTO `clientmess` (`id`, `name`, `email`, `mess`) VALUES
 (5, 'nam ', 'aayu@gmail.com', 'sa'),
 (6, 'sa', 'dharmendrathakur.dev@gmail.com', 'sa'),
 (7, 'dharmendra', 'dharmendrathakur.dev@gmail.com', 'asa'),
-(8, 'as', 'dharmendrathakur.dev@gmail.com', 'xs');
+(8, 'as', 'dharmendrathakur.dev@gmail.com', 'xs'),
+(9, 'name', 'bikeshguptabusiness@gmail.com', 'snas');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,6 @@ CREATE TABLE `heroimage` (
 INSERT INTO `heroimage` (`id`, `title`, `image`) VALUES
 (22, '2', 'uploads/herosectionimg/1768985001056-406141280.jpeg'),
 (23, '3', 'uploads/herosectionimg/1768985009658-36161269.jpeg'),
-(24, '4', 'uploads/herosectionimg/1768985017167-663876149.jpeg'),
 (25, '5', 'uploads/herosectionimg/1768985052370-301124445.jpeg'),
 (26, '6', 'uploads/herosectionimg/1768985058987-165527440.jpeg');
 
@@ -213,7 +214,7 @@ CREATE TABLE `herosection` (
 --
 
 INSERT INTO `herosection` (`id`, `slogan`, `description`, `btn1Text`, `btn1Link`, `btn2Text`, `btn2Link`) VALUES
-(1, 'Clean energy, unstoppable flow.', 'Dudhkoshi Hydropower Nepal Pvt. Ltd. is a leading hydropower development company committed to delivering clean, reliable, and sustainable energy for Nepal’s growing power needs. Established with a vision to harness Nepal’s immense hydropower potential, t', 'Gallery', '#gallery', 'About Us', '#about-us');
+(1, 'Clean energy, unstoppable flow. ', 'Dudhkoshi Hydropower Nepal Pvt. Ltd. is a leading hydropower development company committed to delivering clean, reliable, and sustainable energy for Nepal’s growing power needs. Established with a vision to harness Nepal’s immense hydropower potential, t', 'Gallery', '#gallery', 'About Us', '#about-us');
 
 -- --------------------------------------------------------
 
@@ -289,7 +290,7 @@ CREATE TABLE `other` (
 --
 
 INSERT INTO `other` (`id`, `a`, `b`, `c`, `d`, `developedby`, `copyright`, `location`, `mobNo2`, `mobNo`, `insta`, `address`, `yt`, `twitter`, `fb`, `email`) VALUES
-(1, 'Meet Our Talented Team', 'We are not just Team we are more than Team', 'Sustainable Energy for a Brighter Tomorrow.', 'We harness the pure, natural flow of Nepal’s rivers to deliver reliable, sustainable and environmentally friendly hydro-electric power. Our mission is to light homes, empower communities, and build a cleaner future for Nepal.', 'Aayu Softtech', '© 2026 Dudhkoshi', 'sakla', '00977-1- 4102710', '00977-1- 4102710', 'https://instagram.com/company', 'Anamnagar-29, Kathmandu, Nepaln', 'https://youtube.com/company', 'https://twitter.com/company', 'https://facebook.com/company', '');
+(1, 'Meet Our Talented Team', 'We are not just Team we are more than Team', 'Sustainable Energy for a Brighter Tomorrow.', 'We harness the pure, natural flow of Nepal’s rivers to deliver reliable, sustainable and environmentally friendly hydro-electric power. Our mission is to light homes, empower communities, and build a cleaner future for Nepal.', 'Aayu Softtech', '© 2026 Dudhkoshi', 'sakla', '0097714102710', '0097714102710', 'https://instagram.com/company', 'Anamnagar-29, Kathmandu, Nepaln', 'https://youtube.com/company', 'https://twitter.com/company', 'https://facebook.com/company', '');
 
 -- --------------------------------------------------------
 
@@ -312,7 +313,8 @@ CREATE TABLE `team` (
 INSERT INTO `team` (`id`, `name`, `dp`, `description`, `designation`) VALUES
 (11, 'nam', '1769071618215-802955012.png', 'description', 'designaion'),
 (12, 'nam', '1769071620280-411435707.png', 'description', 'designaion'),
-(13, 'sasa', '1769081628739-842524889.jpg', 'asas', 'sasas');
+(13, 'sasa', '1769081628739-842524889.jpg', 'asas', 'sasas'),
+(14, 'name', '1769268240957-769680970.jpg', 'desc', 'desintion');
 
 -- --------------------------------------------------------
 
@@ -444,13 +446,13 @@ ALTER TABLE `aboutusimage`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `clientmess`
 --
 ALTER TABLE `clientmess`
-  MODIFY `id` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `faqs`
@@ -468,7 +470,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `heroimage`
 --
 ALTER TABLE `heroimage`
-  MODIFY `id` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `herosection`
@@ -498,7 +500,7 @@ ALTER TABLE `other`
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`

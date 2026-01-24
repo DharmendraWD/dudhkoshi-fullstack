@@ -22,7 +22,7 @@ const fetchAboutUsData = async () => {
   try {
     const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
     const response = await fetch(`${BASE_API}/contents/aboutus`, {
-      cache: 'no-store',
+        next: { revalidate: 60 } // Revalidate every 60 seconds
     });
     
     if (!response.ok) {
@@ -61,7 +61,8 @@ const fetchAboutUsImages = async () => {
     const BASE_CONTENT_URL = process.env.BASE_CONTENT_URL || 'http://localhost:4000';
     
     const response = await fetch(`${BASE_API}/contents/aboutusimg`, {
-      cache: 'no-store',
+             next: { revalidate: 60 } // Revalidate every 60 seconds
+
     });
     
     if (!response.ok) {

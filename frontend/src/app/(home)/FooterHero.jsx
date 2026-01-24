@@ -7,7 +7,8 @@ async function fetchOtherData() {
     const BASE_API = process.env.BASE_API || 'http://localhost:3000/api';
     
     const response = await fetch(`${BASE_API}/contents/other`, {
-      cache: 'no-store', // SSR - fresh data on every request
+            next: { revalidate: 60 }// Revalidate every 60 seconds
+
     });
     
     if (!response.ok) {

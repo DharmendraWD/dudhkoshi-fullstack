@@ -1,3 +1,6 @@
+
+// export const dynamic = 'force-dynamic';
+
 import Image from "next/image";
 import Home1 from "./(home)/Home";
 import ClientCarousel from "@/components/Misc/ClientCarousel";

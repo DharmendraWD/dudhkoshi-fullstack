@@ -20,7 +20,8 @@ const fetchHeroData = async () => {
   try {
     const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
     const response = await fetch(`${BASE_API}/contents/herosection`, {
-      cache: 'no-store', // SSR - fresh data on every request
+      
+        next: { revalidate: 60 } // Revalidate every 60 seconds
       // Or for better performance with ISR:
       // next: { revalidate: 3600 } // Revalidate every hour
     });
