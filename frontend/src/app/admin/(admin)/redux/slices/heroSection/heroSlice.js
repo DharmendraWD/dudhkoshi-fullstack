@@ -1,6 +1,7 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
+import { getCookie } from 'cookies-next';
 
 
 // 1. Get hero section 
@@ -68,13 +69,18 @@ export const createHeroSectionImage = createAsyncThunk(
   async ({ images, title }, thunkAPI) => {
     //   console.log(title, "tl from slice")
     try {
+              const token = getCookie('token'); // read from cookie
+
       const formData = new FormData();
       formData.append("title", title);
       formData.append("images", images.file); 
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/contents/herosectionimg`, {
         method: 'POST',
-        credentials: 'include',
+        // credentials: 'include',
+              headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
         body: formData,
       });
 
@@ -100,9 +106,14 @@ export const deleteHeroSectionImage = createAsyncThunk(
     'deleteHeroImage', 
     async (id, thunkAPI) => {
         try {
+                  const token = getCookie('token'); // read from cookie
+
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/contents/herosectionimg/${id}`, {
                 method: 'DELETE',
-                credentials: 'include',
+                // credentials: 'include',
+                      headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
             });
             const data = await res.json();
             if (!res.ok) {
@@ -123,11 +134,17 @@ export const deleteHeroSectionImage = createAsyncThunk(
 export const editHeroSection = createAsyncThunk(
     'editHeroSection',
     async (formData, thunkAPI) => {
-        console.log(formData, "form data")
+        // console.log(formData, "form data")
+
         try {
+                  const token = getCookie('token'); // read from cookie
+
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/contents/herosection`, {
                 method: 'PUT',
-                credentials: 'include',
+                // credentials: 'include',
+                      headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
                 body: formData,
             });
             const data = await res.json();

@@ -1,6 +1,8 @@
 // redux/slices/userSlice/userSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { getCookie } from 'cookies-next';
+
 
 /* ============================
    GET ALL USERS
@@ -9,11 +11,16 @@ export const getAllUsers = createAsyncThunk(
   "users/getAll",
   async (_, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/users`,
         {
              method: "GET",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
         }
       );
       
@@ -38,11 +45,16 @@ export const createUser = createAsyncThunk(
   "users/create",
   async (formData, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/users`,
         {
           method: "POST",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
           body: formData,
         }
       );
@@ -70,11 +82,16 @@ export const deleteUser = createAsyncThunk(
   "users/delete",
   async (userId, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/users/${userId}`,
         {
           method: "DELETE",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
         }
       );
 

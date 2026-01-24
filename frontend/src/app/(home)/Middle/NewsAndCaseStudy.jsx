@@ -155,7 +155,7 @@ export default function NewsAndCaseStudy() {
         
         if (blogData.length > 0) {
           // Transform API data to match our component structure
-          const transformedData = blogData.slice(0, 3).map((item) => ({
+          const transformedData = blogData?.map((item) => ({
             id: item.id || Math.random(),
             title: item.title || 'Untitled Blog Post',
             desc: item.content || 'No content available',
@@ -262,7 +262,7 @@ export default function NewsAndCaseStudy() {
         </div>
         
         {/* View all button */}
-        {displayData.length > 3 && (
+        {/* {displayData.length > 3 && (
           <div className="text-center mt-12">
             <Link 
               href="/blog" 
@@ -271,7 +271,7 @@ export default function NewsAndCaseStudy() {
               View All Articles
             </Link>
           </div>
-        )}
+        )} */}
         
         {/* Add custom styles for line clamping */}
         <style jsx global>{`

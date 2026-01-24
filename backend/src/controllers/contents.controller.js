@@ -178,7 +178,7 @@ const createHeroImage = async (req, res) => {
 
     // Count existing images
     const [existing] = await pool.query(
-      "SELECT COUNT(*) AS total FROM gallery"
+      "SELECT COUNT(*) AS total FROM heroimage"
     );
 
     const existingCount = existing[0].total;

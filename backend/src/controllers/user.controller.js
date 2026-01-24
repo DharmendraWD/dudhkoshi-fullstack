@@ -174,40 +174,28 @@ const login = async (req, res) => {
       return res.status(401).json({ success: false, message: "Invalid password" });
     }
 
-    //  remove password before sending response
-    const { password: _, ...userWithoutPassword } = user;
-
     // Create JWT token
     const token = jwt.sign(
       { 
         email: user.email,
-        userId: user.id ,
+        userId: user.id,
         fullName: user?.fullName
       },
       process.env.JWT_SECRET || '', 
       { expiresIn: '30d' }
     );
 
-      // 3. set cookie 
-  res.cookie("token", token, {
-    httpOnly: true,   // not accessible via JS
-    secure: true,     // HTTPS only (false in local dev)
-    sameSite: "strict",
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-  });
-
-    // Send success response
-   return res.status(200).json({
+    // Send success response with token
+    return res.status(200).json({
       success: true,
       message: "Login successful",
-      token: token,
+      token: token, // Send token in response
       user: {
         id: user.id,
         email: user.email,
         fullName: user.fullName
       }
     });
-
 
   } catch (error) {
     console.error("Server Error:", error);

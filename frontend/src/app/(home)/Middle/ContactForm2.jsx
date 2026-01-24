@@ -252,7 +252,7 @@ const ContactSection = () => {
         </div>
       )}
       
-      <div className="min-h-screen bg-[var(--primary2)] py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center" id='contact'>
+      <div className="min-h-screen bg-[var(--primary2)] overflow-hidden py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center" id='contact'>
         
         {/* Main Grid Container */}
         <motion.div
@@ -381,7 +381,7 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Your name"
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 outline-none hover:shadow-md"
+                  className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 outline-none hover:shadow-md"
                   required
                 />
               </motion.div>
@@ -395,7 +395,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="your.email@example.com"
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 outline-none hover:shadow-md"
+                  className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 outline-none hover:shadow-md"
                   required
                 />
               </motion.div>
@@ -409,7 +409,7 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   rows="5"
                   placeholder="Your message..."
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 resize-none outline-none hover:shadow-md"
+                  className="w-full p-4 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 resize-none outline-none hover:shadow-md"
                   required
                 ></textarea>
               </motion.div>

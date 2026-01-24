@@ -11,6 +11,7 @@ import { CgSpinner } from 'react-icons/cg'; // Add this for a nice loader
 
 import DialogueModal from '../../(admin)/components/DialogueModal';
 import toast from 'react-hot-toast';
+import { setCookie } from 'cookies-next'; // Install: npm install cookies-next
 
 export default function LoginPage() {
   // show hide password when user enter
@@ -24,36 +25,63 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setError("");
 
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/users/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-        // Important: allows the browser to accept the cookie set by backend
-        credentials: "include", 
-      });
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/users/login`, {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+      },
+        credentials: "include",
+      body: JSON.stringify(formData),
+    });
 
-      const data = await response.json();
-      console.log(data)
+    const data = await response.json();
 
-      if (response.ok) {
-        // Redirect to dashboard on success
+    if (response.ok && data.token) {
+      // Set cookie
+  //     setCookie('token', data.token, {
+  //       maxAge: 30 * 24 * 60 * 60,
+  //       path: '/',
+  //    secure: process.env.NODE_ENV === "production",
+  // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  //     });
+
+
+      setCookie("token", data.token, {
+  maxAge: 30 * 24 * 60 * 60,
+  path: "/",
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  domain: process.env.NODE_ENV === "production"
+    ? "http://dudhkoshihydro.com.np"
+    : "localhost",
+});
+
+
+      toast.success("Login successful!");
+      
+      // Small delay to ensure cookie is set
+      setTimeout(() => {
         router.push("/admin/dashboard");
-      } else {
-        setError(data.message || "Invalid credentials. Please try again.");
-        toast.error(data.message || "Invalid credentials. Please try again.");
-      }
-    } catch (err) {
-      setError("Network error. Please check your connection.");
-    } finally {
-      setLoading(false);
+      }, 100);
+      
+    } else {
+      setError(data.message || "Invalid credentials. Please try again.");
+      toast.error(data.message || "Invalid credentials. Please try again.");
     }
-  };
+  } catch (err) {
+    console.error("Login error:", err);
+    setError("Network error. Please check your connection.");
+    toast.error("Network error. Please check your connection.");
+  } finally {
+    setLoading(false);
+  }
+};
   // API INTEGRATING END
 
   return (

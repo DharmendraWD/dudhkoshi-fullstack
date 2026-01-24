@@ -1,6 +1,8 @@
 // redux/slices/blogSlice/blogSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { getCookie } from 'cookies-next';
+
 
 /* ============================
    GET ALL BLOGS
@@ -33,11 +35,16 @@ export const createBlog = createAsyncThunk(
   "blogs/create",
   async (formData, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/blogs`,
         {
           method: "POST",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
           body: formData,
         }
       );
@@ -65,11 +72,16 @@ export const deleteBlog = createAsyncThunk(
   "blogs/delete",
   async (blogId, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/blogs/${blogId}`,
         {
           method: "DELETE",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
         }
       );
 
@@ -97,11 +109,16 @@ export const updateBlog = createAsyncThunk(
   "blogs/update",
   async ({ id, formData }, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/blogs/${id}`,
         {
           method: "PUT",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
           body: formData,
         }
       );

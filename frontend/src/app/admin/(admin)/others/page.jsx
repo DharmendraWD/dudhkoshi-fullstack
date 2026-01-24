@@ -273,7 +273,7 @@ export default function OtherPage() {
                         onChange={(e) => handleInputChange(section, e.target.value)}
                         placeholder={`Enter content for section ${section.toUpperCase()}`}
                         rows={3}
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm resize-none"
+                        className="w-full text-black px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm resize-none"
                       />
                     ) : (
                       <div className="bg-slate-50 rounded-lg p-3 min-h-[80px]">
@@ -304,7 +304,7 @@ export default function OtherPage() {
                       value={formData.developedby || ""}
                       onChange={(e) => handleInputChange('developedby', e.target.value)}
                       placeholder="Enter developer name"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                      className="w-full text-black px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                     />
                   ) : (
                     <div className="bg-slate-50 rounded-lg p-3">
@@ -323,7 +323,7 @@ export default function OtherPage() {
                       value={formData.copyright || ""}
                       onChange={(e) => handleInputChange('copyright', e.target.value)}
                       placeholder="Enter copyright text"
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                      className="w-full text-black px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                     />
                   ) : (
                     <div className="bg-slate-50 rounded-lg p-3">
@@ -355,7 +355,7 @@ export default function OtherPage() {
                       value={formData.location || ""}
                       onChange={(e) => handleInputChange('location', e.target.value)}
                       placeholder="Enter location"
-                      className="w-full px-3 py-2 overflow-scroll my-scroll rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                      className="w-full px-3 text-black py-2 overflow-scroll my-scroll rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                     />
                   ) : (
                     <div className="bg-slate-50 rounded-lg p-3">
@@ -376,7 +376,7 @@ export default function OtherPage() {
                         value={formData.mobNo || ""}
                         onChange={(e) => handleInputChange('mobNo', e.target.value)}
                         placeholder="Enter primary mobile number"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                        className="w-full text-black px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                       />
                     ) : (
                       <div className="bg-slate-50 rounded-lg p-3">
@@ -401,7 +401,7 @@ export default function OtherPage() {
                         value={formData.mobNo2 || ""}
                         onChange={(e) => handleInputChange('mobNo2', e.target.value)}
                         placeholder="Enter secondary mobile number"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                        className="w-full px-3 text-black py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                       />
                     ) : (
                       <div className="bg-slate-50 rounded-lg p-3">
@@ -431,7 +431,7 @@ export default function OtherPage() {
                       onChange={(e) => handleInputChange('address', e.target.value)}
                       placeholder="Enter full address"
                       rows={3}
-                      className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm resize-none"
+                      className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-black text-sm resize-none"
                     />
                   ) : (
                     <div className="bg-slate-50 rounded-lg p-3 min-h-[80px]">
@@ -468,7 +468,7 @@ export default function OtherPage() {
                         value={formData[social.key] || ""}
                         onChange={(e) => handleInputChange(social.key, e.target.value)}
                         placeholder={`Enter ${social.label} URL`}
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
+                        className="w-full text-black px-3 py-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                       />
                     ) : (
                       <div className="bg-slate-50 rounded-lg p-3">

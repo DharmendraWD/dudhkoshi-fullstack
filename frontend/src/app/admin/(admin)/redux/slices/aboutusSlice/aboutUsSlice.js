@@ -1,6 +1,8 @@
 // redux/slices/aboutusSlice/aboutUsSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { getCookie } from 'cookies-next';
+
 
 /* ============================
    1. GET ABOUT US DETAILS
@@ -32,11 +34,16 @@ export const editAboutUs = createAsyncThunk(
   "aboutUs/edit",
   async (formData, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/aboutus`,
         {
           method: "PUT",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
           body: formData,
         }
       );

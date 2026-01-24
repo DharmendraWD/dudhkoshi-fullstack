@@ -146,6 +146,8 @@ export default function AboutUsPage() {
      RENDER
   ============================ */
 
+  // console.log(aboutUsData)
+
   return (
     <>
       {loading && (
@@ -156,7 +158,7 @@ export default function AboutUsPage() {
 
       <div className="max-w-6xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700">
         {/* HEADER */}
-        <header className="flex justify-between items-center mb-10">
+        <header className="flex lg:flex-row flex-col justify-between items-center mb-10">
           <div>
             <h1 className="text-3xl font-extrabold text-slate-900">
               About Us

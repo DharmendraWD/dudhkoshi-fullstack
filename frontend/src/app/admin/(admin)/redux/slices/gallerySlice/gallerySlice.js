@@ -1,6 +1,8 @@
 // redux/slices/gallerySlice/gallerySlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { getCookie } from 'cookies-next';
+
 
 /* ============================
    GET ALL GALLERY IMAGES
@@ -32,11 +34,16 @@ export const createGallery = createAsyncThunk(
   "gallery/create",
   async (formData, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/gallery`,
         {
           method: "POST",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
           body: formData,
         }
       );
@@ -65,11 +72,16 @@ export const deleteGallery = createAsyncThunk(
   "gallery/delete",
   async (imagePath, thunkAPI) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_API}/contents/gallery/${imagePath}`,
         {
           method: "DELETE",
-          credentials: "include",
+          // credentials: "include",
+                headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
         }
       );
 

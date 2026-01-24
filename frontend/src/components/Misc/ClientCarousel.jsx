@@ -32,7 +32,8 @@ const fetchAboutUsData = async () => {
     const data = await response.json();
     
     if (data.success && data.data) {
-      const apiData = data.data;
+      const apiData = data?.data?.[0];
+      // console.log(apiData)
       return {
         heading: apiData.heading || fallbackData.heading,
         longPara: apiData.longPara || fallbackData.longPara,
@@ -105,6 +106,7 @@ const ClientCarousel = async () => {
   // Determine which image to use for each card
   const firstCardImageSrc = aboutImages.firstCardImage || img2.src;
   const mapImageSrc = aboutImages.fullImage || map.src;
+  // console.log(aboutData)
 
   return (
     <div className="max-w-[1440px] pt-4 mx-auto bg-white" id='about-us'>

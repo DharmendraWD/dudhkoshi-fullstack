@@ -1,16 +1,23 @@
 
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getCookie } from 'cookies-next';
+
 
 // Thunk for login API call
 export const userDets = createAsyncThunk(
   'userDets',
   async (accessToken, { rejectWithValue }) => {
     try {
+              const token = getCookie('token'); // read from cookie
+
       // console.log(userID)
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/me`, {
       method: 'GET',
-    credentials: 'include',
+    // credentials: 'include',
+          headers: {
+          Authorization: `Bearer ${token}`, // send token manually
+        },
       });
 
       const data = await res.json();

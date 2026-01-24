@@ -27,7 +27,7 @@ useEffect(() => {
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-indigo-50 rounded-full transition-transform group-hover:scale-110 duration-500" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-            <div className="w-32 h-32 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+            <div className="w-32 h-32 rounded-2xl  flex items-center justify-center text-white shadow-lg shadow-indigo-200">
               {
                 userdets ? (
                   userdets?.image ? (

@@ -48,11 +48,10 @@ __turbopack_context__.s([
     "config",
     ()=>config,
     "default",
-    ()=>proxy
+    ()=>middleware
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [middleware] (ecmascript)");
 ;
-// --- Protected Routes ---
 const PROTECTED_ROUTES = [
     "/admin/dashboard",
     "/admin/hero",
@@ -64,66 +63,57 @@ const PROTECTED_ROUTES = [
     "/admin/messages",
     "/admin/faqs",
     "/admin/others",
-    "/admin/user-management",
+    "/admin/manage-users",
     "/admin/change-password"
 ];
-function isProtectedRoute(pathname) {
-    return PROTECTED_ROUTES.some((route)=>pathname.startsWith(route));
-}
-async function proxy(req) {
-    const { nextUrl } = req;
-    const pathname = nextUrl.pathname;
-    console.log("Proxy running on:", pathname);
-    // --- Extract token once ---
-    const token = req.cookies.get("token")?.value || req.headers.get("authorization")?.replace("Bearer ", "");
-    //  Redirect logged-in users away from /login
-    if (pathname === "/admin/login" && token) {
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/admin/dashboard", req.url));
-    }
-    // If token exists, verify it, verify token if it is changed or not, if token in not valid then send to login
-    if (token && pathname.startsWith('/admin') && pathname !== '/admin/login') {
-        try {
-            console.log("first");
-            const response = await fetch(`${process.env.BASE_API}/me`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                },
-                credentials: 'include',
-                cache: 'no-store'
-            });
-            if (!response.ok) {
-                const loginUrl = new URL('/admin/login', req.url);
-                const res = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(loginUrl);
-                res.cookies.delete('token');
-                return res;
-            }
-            console.log(response.ok);
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next();
-        } catch (error) {
-            console.error("Auth check failed:", error);
-            const loginUrl = new URL('/admin/login', req.url);
-            const res = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(loginUrl);
-            res.cookies.delete('token');
-            return res;
-        }
-    }
-    // ⭐ If route NOT protected → allow
-    if (!isProtectedRoute(pathname)) {
+async function middleware(req) {
+    const { pathname } = req.nextUrl;
+    // Only care about admin routes
+    if (!pathname.startsWith("/admin")) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next();
     }
-    // ⭐ Protected route but no token → send to login
-    if (!token) {
-        const url = new URL("/admin/login", req.url);
-        url.searchParams.set("unauth", "1");
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(url);
+    const isProtected = PROTECTED_ROUTES.some((route)=>pathname.startsWith(route));
+    const cookieHeader = req.headers.get("cookie") || "";
+    // 👉 LOGIN PAGE
+    if (pathname === "/admin/login") {
+        try {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:4000/api")}/me`, {
+                headers: {
+                    cookie: cookieHeader
+                },
+                credentials: "include"
+            });
+            // Token valid → redirect to dashboard
+            if (res.ok) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/admin/dashboard", req.url));
+            }
+        } catch (err) {
+        // ignore
+        }
+        // Token missing / invalid → allow login page
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next();
     }
-    // ⭐ Everything OK → allow access
+    // 👉 PROTECTED ROUTES
+    if (isProtected) {
+        try {
+            const res = await fetch(`${("TURBOPACK compile-time value", "http://localhost:4000/api")}/me`, {
+                headers: {
+                    cookie: cookieHeader
+                },
+                credentials: "include"
+            });
+            if (!res.ok) {
+                throw new Error("Unauthorized");
+            }
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next();
+        } catch (err) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL("/admin/login", req.url));
+        }
+    }
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].next();
 }
 const config = {
-    matcher: [
-        "/:path*"
-    ]
+    matcher: "/admin/:path*"
 };
 }),
 ];
