@@ -4,13 +4,14 @@ import toast from 'react-hot-toast';
 import { getCookie } from 'cookies-next';
 
 
+
 // 1. Get hero section 
 export const getHeroSection = createAsyncThunk(
   'getHeroSection',
   async (_, thunkAPI) => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_API}/contents/herosection`,
+        `${process.env.NEXT_PUBLIC_BASE_API}/contents/herosection`,  
         {
           method: 'GET',
         //   headers: {

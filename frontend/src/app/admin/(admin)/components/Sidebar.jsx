@@ -110,7 +110,7 @@ const handleLogoutApi = async () => {
           <div className="h-20 flex items-center justify-between px-6 border-b border-slate-800">
             {(isOpen || mobileOpen) && (
               <span className="text-xl font-bold text-white tracking-tight">
-                Aayumalun<span className="text-indigo-500"> Admin</span>
+                Dudhkoshi<span className="text-indigo-500"> Admin</span>
               </span>
             )}
             <button onClick={() => setIsOpen(!isOpen)} className="hidden lg:block hover:text-white">

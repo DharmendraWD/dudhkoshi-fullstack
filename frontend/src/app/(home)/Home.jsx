@@ -1,6 +1,6 @@
 // Home.js
+export const dynamic = 'force-dynamic';
 import React from 'react';
-import Head from 'next/head';
 import RoundedBgBtn from '@/components/Buttons/RoundedBgBtn';
 import RoundedNotBGBtn from '@/components/Buttons/RoundedNotBGBtn';
 import InfiniteScrollCarousel from './InfiniteScrollingImage';
@@ -19,19 +19,17 @@ const fallbackHeroData = {
 const fetchHeroData = async () => {
   try {
     const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
+
     const response = await fetch(`${BASE_API}/contents/herosection`, {
-      
-        next: { revalidate: 60 } // Revalidate every 60 seconds
-      // Or for better performance with ISR:
-      // next: { revalidate: 3600 } // Revalidate every hour
+      cache: 'no-store' 
     });
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     const data = await response.json();
-    
+
     if (data.success && data.data && data.data.length > 0) {
       const apiData = data.data[0];
       return {
@@ -43,7 +41,7 @@ const fetchHeroData = async () => {
         btn2Link: apiData.btn2Link || fallbackHeroData.btn2Link
       };
     }
-    
+
     return fallbackHeroData;
   } catch (error) {
     console.error('Failed to fetch hero section data:', error);
@@ -58,10 +56,6 @@ const Home1 = async () => {
 
   return (
     <>
-      <Head>
-        <title>Home</title>
-        <meta name="description" content={heroData.description.substring(0, 160)} />
-      </Head>
       
       <section className="bg-white pt-[120px] md:pt-20 lg:pt-24 max-w-[1400px] mx-auto px-[20px] lg:px-0">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 lg:gap-8">
