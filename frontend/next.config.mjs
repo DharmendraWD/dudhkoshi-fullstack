@@ -1,23 +1,17 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   images: {
-//     remotePatterns: [
-
-//         {
-//         protocol: 'https',
-//         hostname: 'randomuser.me',
-//       },
-//      { protocol: 'http',
-//       hostname: 'localhost',}
-//     ],
-//   },
-// };
-
-// export default nextConfig;
-
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-};
+  images: {
+    remotePatterns: [
 
+        {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+      },
+     { protocol: 'http',
+      hostname: 'localhost',}
+    ],
+  },
+};
 export default nextConfig;
+
+

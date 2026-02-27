@@ -18,10 +18,11 @@ const fallbackHeroData = {
 // Function to fetch hero section data
 const fetchHeroData = async () => {
   try {
+    console.log(process.env.BASE_API, "process.env.BASE_API")
     const BASE_API = process.env.BASE_API || 'http://localhost:4000/api';
 
     const response = await fetch(`${BASE_API}/contents/herosection`, {
-      cache: 'no-store' 
+      // cache: 'no-store' 
     });
 
     if (!response.ok) {
