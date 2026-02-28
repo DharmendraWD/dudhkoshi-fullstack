@@ -33,7 +33,7 @@ export default async function NewsDets(props) {
         // Fetch the specific blog
         const blogApiUrl = `${process.env.BASE_API}/contents/blogs/${id}`;
         const blogResponse = await fetch(blogApiUrl, {
-            next: { revalidate: 3600 }
+            // next: { revalidate: 3600 }
         });
 
         if (!blogResponse.ok) {
@@ -45,7 +45,7 @@ export default async function NewsDets(props) {
         // Fetch all blogs for "Other Blogs" section
         const allBlogsApiUrl = `${process.env.BASE_API}/contents/blogs`;
         const allBlogsResponse = await fetch(allBlogsApiUrl, {
-            next: { revalidate: 3600 }
+            // next: { revalidate: 3600 }
         });
 
         if (allBlogsResponse.ok) {
