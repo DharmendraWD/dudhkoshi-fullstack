@@ -34,9 +34,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={myFont.variable}>
+          <head>
+        <noscript>
+          <style>{`
+            [data-aos] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+              div{
+                opacity: 1 !important;
+                transform: none !important;
+              }
+                .opZeroInNoJs{
+                  opacity: 0 !important;}
+          `}</style>
+          
+        </noscript>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
+
         {/* <Navbar></Navbar> */}
         <ToastProvider />
         <AOSInit />

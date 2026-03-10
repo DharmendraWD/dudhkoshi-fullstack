@@ -1,14 +1,12 @@
-"use client";
 
-import { useState, useEffect } from "react";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+
 import img1 from "../../../../public/img/blog/blog2.png";
 import img2 from "../../../../public/img/proj/22.png";
 import img3 from "../../../../public/img/proj/23.png";
 import img4 from "../../../../public/img/proj/24.png";
 import img5 from "../../../../public/img/proj/25.png";
 import img6 from "../../../../public/img/proj/26.png";
+import GallaryClient from "./GallaryClient";
 
 // Fallback images in case API fails
 const fallbackImages = [
@@ -50,18 +48,13 @@ const fallbackImages = [
   },
 ];
 
-export default function MyGallery() {
-  const [images, setImages] = useState(fallbackImages);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+export default async function MyGallery() {
+  let images = fallbackImages;
 
   // Fetch gallery images from API
-  useEffect(() => {
-    const fetchGalleryData = async () => {
       try {
-        setLoading(true);
-        const BASE_API = process.env.NEXT_PUBLIC_BASE_API || 'http://localhost:3000/api';
-        const BASE_CONTENT_URL = process.env.NEXT_PUBLIC_BASE_CONTENT_URL  || 'http://localhost:3000';
+        const BASE_API = process.env.BASE_API || 'http://localhost:3000/api';
+        const BASE_CONTENT_URL = process.env.BASE_CONTENT_URL  || 'http://localhost:3000';
         
         const response = await fetch(`${BASE_API}/contents/gallery`, {
           cache: 'no-cache',
@@ -113,133 +106,42 @@ export default function MyGallery() {
           }).filter(item => item.original); // Remove items with null URLs
           
           if (apiImages.length > 0) {
-            setImages(apiImages);
+           images = apiImages;
           } else {
-            setImages(fallbackImages);
+           images = fallbackImages;
           }
         } else {
           // If API returns empty array, use fallback
-          setImages(fallbackImages);
+                     images = fallbackImages;
+
         }
-        
-        setError(null);
+
       } catch (err) {
         console.error('Failed to fetch gallery data:', err);
-        setError('Failed to load gallery images. Showing default gallery.');
-        setImages(fallbackImages);
+                 images = fallbackImages;
+
       } finally {
-        setLoading(false);
       }
-    };
 
-    fetchGalleryData();
-  }, []);
 
-  // Custom render for gallery items to handle image loading errors
-  const renderItem = (item) => {
-    const handleImageError = (e) => {
-      console.error('Image failed to load:', e.target.src);
-      // Try to fallback to local image based on index
-      const fallbackIndex = images.findIndex(img => img.original === item.original);
-      if (fallbackIndex >= 0 && fallbackImages[fallbackIndex]) {
-        e.target.src = fallbackImages[fallbackIndex].original;
-      } else {
-        e.target.src = fallbackImages[0].original;
-      }
-    };
 
-    return (
-      <div className="image-gallery-image">
-        <img
-          src={item.original}
-          alt={item.originalAlt || item.description || 'Gallery Image'}
-          onError={handleImageError}
-          loading="lazy"
-        />
-        {item.description && (
-          <span className="image-gallery-description">
-            {item.description}
-          </span>
-        )}
-      </div>
-    );
-  };
 
-  // Custom render for thumbnail items
-  const renderThumbInner = (item) => {
-    const handleThumbError = (e) => {
-      console.error('Thumbnail failed to load:', e.target.src);
-      // Try to fallback to local thumbnail based on index
-      const fallbackIndex = images.findIndex(img => img.thumbnail === item.thumbnail);
-      if (fallbackIndex >= 0 && fallbackImages[fallbackIndex]) {
-        e.target.src = fallbackImages[fallbackIndex].thumbnail;
-      } else {
-        e.target.src = fallbackImages[0].thumbnail;
-      }
-    };
 
-    return (
-      <div className="image-gallery-thumbnail-inner">
-        <img
-          src={item.thumbnail}
-          alt={item.thumbnailAlt || 'Thumbnail'}
-          onError={handleThumbError}
-          loading="lazy"
-        />
-      </div>
-    );
-  };
 
-  // Loading state
-  if (loading) {
-    return (
-      <div className="" id="gallery">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center mb-12 lg:mb-16">
-          Gallery
-        </h2>
-        <div className="animate-pulse">
-          <div className="h-[500px] bg-gray-300 rounded-lg mb-4"></div>
-          <div className="flex gap-2 justify-center">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-20 w-32 bg-gray-300 rounded"></div>
-            ))}
-          </div>
-        </div>
-        <p className="text-center text-gray-500 mt-4">Loading gallery images...</p>
-      </div>
-    );
-  }
 
   return (
     <div className="" id="gallery">
       <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center mb-12 lg:mb-16">
         Gallery
       </h2>
-      
-      {/* Error message */}
-      {error && (
-        <div className="mb-6 p-4 bg-yellow-50 text-yellow-700 rounded-lg text-center">
-          {error}
-        </div>
-      )}
+
       
       {/* Image count indicator */}
       <div className="text-center text-gray-600 mb-6">
         Showing {images.length} image{images.length !== 1 ? 's' : ''}
       </div>
       
-      <ImageGallery 
-        items={images} 
-        renderItem={renderItem}
-        renderThumbInner={renderThumbInner}
-        showPlayButton={true}
-        showFullscreenButton={true}
-        showNav={true}
-        autoPlay={false}
-        slideInterval={5000}
-        slideDuration={450}
-        additionalClass="custom-gallery min-w-[100%]"
-      />
+<GallaryClient images={images} />
       
 
     </div>
